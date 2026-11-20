@@ -54,24 +54,27 @@ All of this lives in `src/model/` as pure, unit-tested code (`npm test`).
    constant when no next level is known yet). `running` hides the fill state, so the last known fill value is carried
    forward (or the previous back-to-back session's final fill, or a prior). After the end the room empties over 4 min.
 3. **Popularity score** (0–1): `0.55 × peak fill + 0.25 × speed + 0.20 × capacity pressure`. *Speed* is how long before
-   the start the room reached `filling` (full score at 20 min). *Pressure* is highest for a `full` 50-seat room: that is
+   the start the room reached `filling` (full score at 20 min). *Pressure* is highest for a `full` small room: that is
    unmet demand and the UI says so. Sessions without data get a prior from format and room size, nudged by the
    popularity of their topics in sessions that do have data.
-4. **Flow / conservation**: a documented constant crowd of **650** people (`CROWD_TOTAL`) is in the building. Room
+4. **Flow / conservation**: the **500** attendees (`CROWD_TOTAL`) are in the building. Room
    counts come from the curves (capped at capacity); if they exceed what the crowd allows (≥ 6 % must stay in hubs) all
    rooms are scaled down proportionally and the excess is reported as `overflow`. The rest is split over Century, Hub 2
-   and Hub 4. Counts are rounded to integers that sum to exactly 650 at every 30 s step and each person is assigned to
+   and Hub 4. Counts are rounded to integers that sum to exactly 500 at every 30 s step and each person is assigned to
    exactly one location through a fixed ranking, so people are neither created nor lost. Every person's position is a
    deterministic function of time, which is why scrubbing works in both directions.
-5. **Topics** (`topics.js`): the curated `topics` field plus keywords mined from `description` and `main_tools`
-   (proper-noun / tool extraction with document-frequency filtering, a stop-word list, and merging of near-duplicates
-   into curated topics). 20 curated topics + up to 4 keywords are kept. A session's audience is split over its topics
-   (curated 78 %, keywords 22 %).
+5. **Topics** (`topics.js`): 20 topics taken from the session **titles and descriptions only**. The curated `topics`
+   field and `main_tools` of the conference data are not used. The topics were derived by reading all descriptions,
+   grouping the recurring terms and giving each group a general name (`TOPIC_LEXICON`). The grouping is editorial; the
+   evidence is not: every term is matched literally against the text, a session feeds a topic only when its own text
+   contains that topic's terms, and it feeds at most its 4 strongest topics, weighted by how often and how
+   specifically (tf-idf over all 40 sessions) the terms occur. The matched words are shown when you hover a cloud.
+   `npm test` fails if any term occurs in no description or any topic has fewer than two sessions behind it.
 6. **Projection**: wherever no recording covers a time (future, gaps, before the recorder started) everything is derived
    from schedule + capacity + topic popularity so far and flagged: hatched timeline blocks, hatched fill bars,
    violet dashed cloud labels, a "Projected · not measured" chip.
 
-Limits: capacities and the crowd total are assumptions; the level bands are coarse; a `full` 50-seat room says nothing
+Limits: capacities and the crowd total are assumptions; the level bands are coarse; a `full` small room says nothing
 about how many people were turned away; the platform's `running` flag lagged the scheduled start by about 8 minutes in
 the real data, so a room can show `full` after its session started (handled: it is treated as still full);
 the vertical spacing of the floors is schematic.

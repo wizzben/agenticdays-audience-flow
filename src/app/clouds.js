@@ -51,7 +51,7 @@ export function createClouds(scene, labelsEl, camera, container) {
     const n = m.topics.length;
     m.topics.forEach((t, i) => {
       const rng = mulberry32(777 + i * 13);
-      const hue = (0.52 + 0.38 * rng() + (t.kind === 'keyword' ? 0.1 : 0)) % 1;
+      const hue = (0.52 + 0.38 * rng()) % 1;
       const baseCol = new THREE.Color().setHSL(hue, 0.55, 0.62);
       const lightCol = new THREE.Color().setHSL(hue, 0.5, 0.82);
       const matA = new THREE.SpriteMaterial({ map: tex, color: baseCol.clone(), transparent: true, opacity: 0.5, depthWrite: false, fog: true });

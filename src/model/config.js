@@ -2,8 +2,8 @@
 
 export const TZ = 'Europe/Zurich';
 
-/** Assumed total crowd in the building during the afternoon (documented assumption, not measured). */
-export const CROWD_TOTAL = 650;
+/** Total number of attendees (figure given by the organisers' side, not derived from the recording). */
+export const CROWD_TOTAL = 500;
 /** Fraction of the crowd that is always outside the session rooms (hubs, corridors, coffee). */
 export const HUB_MIN_FRACTION = 0.06;
 
@@ -18,9 +18,9 @@ export const RECORDING_URL = 'https://raw.githubusercontent.com/wizzben/agenticd
 /** Session rooms. `cap` is the assumed seat count. */
 export const ROOMS = [
   { id: 'millennium', name: 'Millennium', short: 'M', cap: 500, floor: 'main2' },
-  { id: 'studio4', name: 'Studio 4', short: 'S4', cap: 50, floor: 'n4' },
-  { id: 'studio6', name: 'Studio 6', short: 'S6', cap: 50, floor: 'n4' },
-  { id: 'studio3', name: 'Studio 3', short: 'S3', cap: 50, floor: 'n0' },
+  { id: 'studio4', name: 'Studio 4', short: 'S4', cap: 70, floor: 'n4' },
+  { id: 'studio6', name: 'Studio 6', short: 'S6', cap: 25, floor: 'n4' },
+  { id: 'studio3', name: 'Studio 3', short: 'S3', cap: 70, floor: 'n0' },
   { id: 'studio1', name: 'Studio 1', short: 'S1', cap: 50, floor: 'main1' },
 ];
 

@@ -76,7 +76,7 @@ for (const [label, url] of [['file://', 'file://' + path.join(root, 'index.html'
   const { page, ctx, msgs, requests } = await open(url + '?t=14:20&play=0');
   const st = await canvasStats(page);
   check(`[${label}] canvas is not blank`, st.colors > 6 && st.bright > 10, JSON.stringify(st));
-  check(`[${label}] 3D scene has rooms, crowd and clouds`, await page.evaluate(() => Object.keys(AED.scene.rooms).length === 5 && AED.crowd.mesh.count === 650 && AED.clouds.clouds.length >= 18));
+  check(`[${label}] 3D scene has rooms, crowd and clouds`, await page.evaluate(() => Object.keys(AED.scene.rooms).length === 5 && AED.crowd.mesh.count === 500 && AED.clouds.clouds.length === 20));
 
   // play advances time
   const a = await page.evaluate(() => AED.state.t);

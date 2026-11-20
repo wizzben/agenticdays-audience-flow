@@ -1,4 +1,4 @@
-// Frame-time and allocation check in headless Chrome with the full crowd (650 people) and all clouds.
+// Frame-time and allocation check in headless Chrome with the full crowd (500 people) and all clouds.
 // Run: node test/perf.mjs [swiftshader|metal]
 import { chromium } from 'playwright-core';
 import path from 'node:path';
@@ -55,7 +55,7 @@ async function allocOf(fnSrc) {
   return { bytesPerFrame: +(total / FR).toFixed(2), top: Object.entries(by).sort((a, b) => b[1] - a[1]).slice(0, 2) };
 }
 const alloc = {
-  crowdUpdate_650_people: await allocOf('A.crowd.update(t + i * 3000, i * 0.016, mask);'),
+  crowdUpdate_500_people: await allocOf('A.crowd.update(t + i * 3000, i * 0.016, mask);'),
   cloudsUpdate_24_clouds_no_label_layout: await allocOf('A.clouds.update(t + i * 3000, 0.016, i * 0.016, false);'),
   roomStates: await allocOf("for (const id of ['millennium','studio4','studio6','studio3','studio1']) A.scene.setRoomState(id, 0.5, 'filling', true, false, false);"),
   labelProjection: await allocOf('A.scene.updateLabels();'),

@@ -45,11 +45,11 @@
     <h3>Measured vs. estimated vs. projected</h3>
     <ul>
       <li><b>Measured:</b> only each room’s level (open / filling / full / running), polled every 30 s by a recorder.</li>
-      <li><b>Estimated:</b> headcounts and movement. Levels are mapped to bands of the room capacity (Millennium ≈ 500 seats, others ≈ 50), smoothed by timing, and a fixed crowd of <span id="lg-crowd">650</span> people is moved between rooms and hubs so that nothing is lost or duplicated.</li>
+      <li><b>Estimated:</b> headcounts and movement. Levels are mapped to bands of the room capacity (Millennium ≈ 500 seats, Studio 3 and 4 ≈ 70, Studio 1 ≈ 50, Studio 6 ≈ 25), smoothed by timing, and the <span id="lg-crowd">500</span> attendees are moved between rooms and hubs so that nothing is lost or duplicated.</li>
       <li><b>Projected:</b> where there is no recording (future or gaps), shown hatched / violet-tinted, based on schedule, capacity and topic popularity so far. Not measured.</li>
     </ul>
     <h3>Topic clouds</h3>
-    <p>Curated session topics plus keywords from the descriptions. Size = estimated audience-minutes so far (or people in rooms now). Hover or tap one to light up the rooms and sessions that feed it.</p>
+    <p>20 topics extracted from the session titles and descriptions: recurring words are grouped under a general name, and a session only feeds a topic when its own text contains those words. Size = estimated audience-minutes so far (or people in rooms now). Hover or tap one to light up the rooms and sessions that feed it.</p>
     <h3>Controls</h3>
     <p>Drag to orbit, scroll to zoom, right-drag to pan, click a room to focus it. <kbd>Space</kbd> play/pause · <kbd>←</kbd>/<kbd>→</kbd> ±1 min (<kbd>Shift</kbd> ±10) · <kbd>[</kbd>/<kbd>]</kbd> previous/next session change · <kbd>L</kbd> live · <kbd>R</kbd> reset.</p>
     <p class="meta" id="lg-meta"></p>

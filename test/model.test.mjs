@@ -5,6 +5,7 @@ import { buildModel, roundCounts, normalizeSessions, conferenceWindow, makeCurve
 import { parseRecording, matchRoom, normalizeLevel, mergeSamples } from '../src/model/recording.js';
 import { synthRecording, toJsonl } from '../src/model/synth.js';
 import { CROWD_TOTAL, ROOMS } from '../src/model/config.js';
+import { TOPIC_LEXICON, termRegex, sessionText } from '../src/model/topics.js';
 
 const raw = JSON.parse(fs.readFileSync(new URL('../data/sessions.json', import.meta.url)));
 const win = conferenceWindow(raw);
@@ -167,19 +168,44 @@ test('full synthetic day: recorded part is flagged, future is projected', () => 
   assert.ok(m.sessions.some((s) => !s.hasData) && m.sessions.some((s) => s.hasData));
 });
 
-test('topics: curated + a few keywords, capped near 20-24, weights sum to 1 per session', () => {
+test('topics: exactly the 20 lexicon topics, weights sum to 1 per session', () => {
   const m = buildModel({ sessions: raw, recording: [] });
-  assert.ok(m.topics.length >= 18 && m.topics.length <= 24, `topics ${m.topics.length}`);
-  assert.ok(m.topics.some((t) => t.kind === 'keyword'), 'has keyword topics');
-  assert.ok(m.topics.some((t) => t.kind === 'curated'));
+  assert.equal(m.topics.length, 20);
+  assert.ok(m.topics.every((t) => t.kind === 'extracted'));
   for (const s of m.sessions) {
-    if (!s.topics.length) continue;
+    assert.ok(s.topics.length > 0, `session ${s.id} has topics`);
     assert.ok(Math.abs(s.topics.reduce((a, b) => a + b.w, 0) - 1) < 1e-6);
   }
-  // the session without curated topics still gets topics from keywords
-  const noCur = m.sessions.find((s) => s.id === '1309668');
-  assert.ok(noCur && noCur.topics.length > 0, 'keyword topics for session without curated topics');
   assert.equal(new Set(m.topics.map((t) => t.id)).size, m.topics.length);
+});
+
+test('topics are extracted from the descriptions, not invented', () => {
+  const all = normalizeSessions(raw);
+  const texts = new Map(all.map((s) => [s.id, sessionText(s)]));
+  // 1. every term of every topic literally occurs in at least one title/description
+  for (const t of TOPIC_LEXICON) {
+    for (const term of t.terms) {
+      assert.ok(all.some((s) => termRegex(term).test(texts.get(s.id))), `term "${term}" of "${t.label}" occurs nowhere`);
+    }
+  }
+  // 2. a session only feeds a topic when its own text contains the evidence words
+  const m = buildModel({ sessions: raw, recording: [] });
+  for (const s of m.sessions) {
+    for (const e of s.topics) {
+      assert.ok(e.evidence.length > 0, `no evidence for ${e.id} in ${s.id}`);
+      for (const w of e.evidence) assert.ok(texts.get(s.id).includes(w), `"${w}" is not in the text of session ${s.id}`);
+    }
+  }
+  // 3. every topic is backed by at least two afternoon sessions
+  for (const t of m.topics) {
+    const n = m.sessions.filter((s) => s.topics.some((e) => e.id === t.id)).length;
+    assert.ok(n >= 2, `${t.label} only has ${n} session(s)`);
+    assert.ok(t.evidence.length > 0);
+  }
+  // 4. the curated topics field is ignored: removing it changes nothing
+  const stripped = { ...raw, sessions: raw.sessions.map((s) => ({ ...s, topics: [], main_tools: '' })) };
+  const m2 = buildModel({ sessions: stripped, recording: [] });
+  assert.deepEqual(m2.topics.map((t) => [t.id, t.potential]), m.topics.map((t) => [t.id, t.potential]));
 });
 
 test('topic cumulative series is non-decreasing and max is positive', () => {

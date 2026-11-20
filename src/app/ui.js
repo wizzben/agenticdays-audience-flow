@@ -181,7 +181,8 @@ export function createUI(app) {
     const feeding = model.sessions.filter((s) => s.topics.some((tp) => tp.id === topic.id));
     const unit = app.topicMode() === 'cum' ? `≈ ${Math.round(val)} audience-minutes so far` : `≈ ${Math.round(val)} people in sessions on this topic now`;
     els.tip.innerHTML = `<b>${esc(topic.label)}</b><div class="row">${unit}${proj > 0.5 ? ' <span class="row p">(mostly projected)</span>' : ''}</div>` +
-      `<div class="row">${topic.kind === 'keyword' ? 'Keyword from session descriptions' : 'Curated session topic'} · ${feeding.length} session${feeding.length === 1 ? '' : 's'}</div>` +
+      `<div class="row">Extracted from the session descriptions · ${feeding.length} session${feeding.length === 1 ? '' : 's'}</div>` +
+      `<div class="row">Words found: ${(topic.evidence || []).slice(0, 8).map((w) => '“' + esc(w) + '”').join(', ')}${(topic.evidence || []).length > 8 ? ' …' : ''}</div>` +
       `<div class="row">${feeding.slice(0, 6).map((s) => `${fmtHM(s.start)} ${ROOMS.find((r) => r.id === s.roomId).short}`).join(' · ')}${feeding.length > 6 ? ' …' : ''}</div>`;
     els.tip.hidden = false;
     const w = els.tip.offsetWidth, h = els.tip.offsetHeight, W = window.innerWidth, H = window.innerHeight;
