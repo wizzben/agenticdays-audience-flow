@@ -1,0 +1,230 @@
+// Three.js scene: renderer, camera, venue geometry (modelled from the venue map), room volumes, labels.
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import G from '../venue/geometry.js';
+import { ROOMS, HUBS } from '../model/config.js';
+import { buildRoutes } from './routes.js';
+
+export const LEVEL_HEX = { open: '#4fd6a8', filling: '#f4c24f', full: '#f0605d', running: '#6b8cff', none: '#7a869c' };
+const lc = (k) => new THREE.Color(LEVEL_HEX[k] || LEVEL_HEX.none);
+
+const FLOOR_LABEL = { n4: 'Floor 4 · north building', n0: 'Ground floor · north building', main2: '2nd floor · main building', main1: '1st floor · main building' };
+
+export function createScene(container, labelsEl) {
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(0x070b16, 1);
+  container.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x070b16, 220, 520);
+  const camera = new THREE.PerspectiveCamera(38, 1, 1, 1200);
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.maxPolarAngle = Math.PI * 0.49;
+  controls.minDistance = 25;
+  controls.maxDistance = 420;
+  controls.screenSpacePanning = true;
+
+  scene.add(new THREE.HemisphereLight(0xaac4ff, 0x1a2036, 1.15));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.9);
+  sun.position.set(60, 120, 80);
+  scene.add(sun);
+
+  const home = { pos: new THREE.Vector3(150, 72, 38), target: new THREE.Vector3(0, 24, 0) };
+  camera.position.copy(home.pos);
+  controls.target.copy(home.target);
+
+  // --- venue
+  const venue = new THREE.Group();
+  scene.add(venue);
+  const slabMat = (floor) => new THREE.MeshStandardMaterial({ color: floor.startsWith('n') ? 0x1b2744 : 0x172540, transparent: true, opacity: 0.42, roughness: 0.9, metalness: 0, depthWrite: false, side: THREE.DoubleSide });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x5a7fc0, transparent: true, opacity: 0.85 });
+  const shapeOf = (poly) => new THREE.Shape(poly.map((p) => new THREE.Vector2(p[0], -p[1])));
+  for (const s of G.slabs) {
+    const geo = new THREE.ExtrudeGeometry(shapeOf(s.poly), { depth: 0.5, bevelEnabled: false });
+    geo.rotateX(-Math.PI / 2);
+    const m = new THREE.Mesh(geo, slabMat(s.floor));
+    m.position.y = s.y - 0.5;
+    m.renderOrder = 1;
+    venue.add(m);
+    const e = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 20), lineMat);
+    e.position.y = s.y - 0.5;
+    venue.add(e);
+  }
+  // hubs (floor patches)
+  const hubMeshes = {};
+  for (const h of HUBS) {
+    const r = G.rooms[h.id];
+    if (!r) continue;
+    const geo = new THREE.ShapeGeometry(shapeOf(r.poly));
+    geo.rotateX(-Math.PI / 2);
+    const mat = new THREE.MeshBasicMaterial({ color: 0xf0a860, transparent: true, opacity: 0.16, depthWrite: false, side: THREE.DoubleSide });
+    const m = new THREE.Mesh(geo, mat);
+    m.position.y = r.y + 0.06;
+    m.renderOrder = 2;
+    venue.add(m);
+    const e = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: 0xf0a860, transparent: true, opacity: 0.45 }));
+    e.position.y = r.y + 0.07;
+    venue.add(e);
+    hubMeshes[h.id] = m;
+  }
+  // walking routes (corridors, escalator, skywalk, lifts)
+  {
+    const { edges } = buildRoutes(ROOMS.map((r) => r.id));
+    const pos = [];
+    for (const [a, b] of edges) { pos.push(...G.nodes[a], ...G.nodes[b]); }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    const l = new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color: 0x7fb4ff, transparent: true, opacity: 0.22 }));
+    venue.add(l);
+  }
+
+  // --- rooms
+  const rooms = {};
+  const hitMeshes = [];
+  for (const r of ROOMS) {
+    const g = G.rooms[r.id];
+    if (!g) continue;
+    const o = g.obb;
+    const H = 3.6;
+    const grp = new THREE.Group();
+    grp.position.set(o.cx, g.y, o.cz);
+    grp.rotation.y = -o.rot;
+    const box = new THREE.BoxGeometry(o.w, H, o.d);
+    box.translate(0, H / 2, 0);
+    const glassMat = new THREE.MeshBasicMaterial({ color: lc('none'), transparent: true, opacity: 0.07, depthWrite: false });
+    const glass = new THREE.Mesh(box, glassMat);
+    glass.renderOrder = 3;
+    glass.userData.roomId = r.id;
+    grp.add(glass);
+    hitMeshes.push(glass);
+    const edgeMat = new THREE.LineBasicMaterial({ color: lc('none'), transparent: true, opacity: 0.95 });
+    grp.add(new THREE.LineSegments(new THREE.EdgesGeometry(box), edgeMat));
+    const liqGeo = new THREE.BoxGeometry(o.w * 0.98, 1, o.d * 0.98);
+    liqGeo.translate(0, 0.5, 0);
+    const liqMat = new THREE.MeshBasicMaterial({ color: lc('none'), transparent: true, opacity: 0.3, depthWrite: false });
+    const liq = new THREE.Mesh(liqGeo, liqMat);
+    liq.scale.y = 0.02;
+    liq.renderOrder = 2;
+    grp.add(liq);
+    venue.add(grp);
+    rooms[r.id] = { id: r.id, def: r, geo: g, group: grp, glass, glassMat, edgeMat, liq, liqMat, color: lc('none'), anchor: new THREE.Vector3(o.cx, g.y + H + 0.6, o.cz), curFill: 0 };
+  }
+
+  // --- labels (DOM)
+  const labels = [];
+  const mk = (cls, html, anchor, extra) => {
+    const el = document.createElement('div');
+    el.className = 'lbl ' + cls;
+    el.innerHTML = html;
+    labelsEl.appendChild(el);
+    const o = { el, anchor, ...extra };
+    labels.push(o);
+    return o;
+  };
+  for (const r of ROOMS) {
+    const rm = rooms[r.id];
+    if (!rm) continue;
+    const l = mk('room', `<b>${r.name}</b><span class="cnt"></span><i class="bar"><u></u></i>`, rm.anchor, { roomId: r.id });
+    rm.label = l;
+    l.cnt = l.el.querySelector('.cnt');
+    l.bar = l.el.querySelector('u');
+    l.barWrap = l.el.querySelector('.bar');
+  }
+  for (const h of HUBS) {
+    const g = G.rooms[h.id];
+    if (!g) continue;
+    const l = mk('hub', `<b>${h.name}</b><span class="cnt"></span>`, new THREE.Vector3(g.obb.cx, g.y + 3.2, g.obb.cz), { hubId: h.id });
+    l.cnt = l.el.querySelector('.cnt');
+  }
+  const floorAnchors = {};
+  for (const s of G.slabs) {
+    const xs = s.poly.map((p) => p[0]);
+    const minX = Math.min(...xs);
+    const pt = s.poly.reduce((a, p) => (p[0] === minX ? p : a), s.poly[0]);
+    floorAnchors[s.floor] = new THREE.Vector3(pt[0] - 2, s.y, pt[1]);
+    mk('floor', FLOOR_LABEL[s.floor], floorAnchors[s.floor]);
+  }
+
+  // --- sizing
+  function resize() {
+    const w = container.clientWidth || 800, h = container.clientHeight || 600;
+    renderer.setSize(w, h, false);
+    renderer.domElement.style.width = w + 'px';
+    renderer.domElement.style.height = h + 'px';
+    camera.aspect = w / h;
+    // keep the venue in view on tall (phone) screens
+    camera.fov = w / h < 0.8 ? 52 : 38;
+    camera.updateProjectionMatrix();
+    if (!resize.once) { resize.once = true; if (w / h < 0.8) { home.pos.set(92, 108, 150); camera.position.copy(home.pos); } }
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // --- camera animation
+  let anim = null;
+  function flyTo(pos, target, ms = 900) {
+    anim = { t0: performance.now(), ms, p0: camera.position.clone(), q0: controls.target.clone(), p1: pos.clone(), q1: target.clone() };
+  }
+  const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  function stepAnim(now) {
+    if (!anim) return;
+    const k = Math.min(1, (now - anim.t0) / anim.ms), e = ease(k);
+    camera.position.lerpVectors(anim.p0, anim.p1, e);
+    controls.target.lerpVectors(anim.q0, anim.q1, e);
+    if (k >= 1) anim = null;
+  }
+  controls.addEventListener('start', () => { anim = null; });
+  function resetView() { flyTo(home.pos, home.target); }
+  function focusRoom(id) {
+    const rm = rooms[id];
+    if (!rm) return;
+    const t = new THREE.Vector3(rm.group.position.x, rm.group.position.y + 2, rm.group.position.z);
+    const dir = camera.position.clone().sub(controls.target).normalize();
+    const dist = id === 'millennium' ? 85 : 55;
+    flyTo(t.clone().add(dir.multiplyScalar(dist)), t);
+  }
+
+  // --- label projection (no allocation per frame beyond a shared vector)
+  const v = new THREE.Vector3();
+  function updateLabels() {
+    const w = container.clientWidth, h = container.clientHeight;
+    for (const l of labels) {
+      v.copy(l.anchor).project(camera);
+      const vis = v.z < 1 && v.z > -1 && Math.abs(v.x) < 1.15 && Math.abs(v.y) < 1.15;
+      if (!vis) { if (l.shown !== false) { l.el.style.display = 'none'; l.shown = false; } continue; }
+      if (l.shown === false) { l.el.style.display = ''; l.shown = true; }
+      l.el.style.transform = `translate(-50%,-100%) translate(${((v.x + 1) * 0.5 * w).toFixed(1)}px,${((1 - v.y) * 0.5 * h).toFixed(1)}px)`;
+    }
+  }
+
+  // --- room state
+  function setRoomState(id, fill, level, rec, selected, hl) {
+    const rm = rooms[id];
+    if (!rm) return;
+    const target = lc(level);
+    rm.color.lerp(target, 0.15);
+    rm.curFill += (fill - rm.curFill) * 0.2;
+    const f = Math.max(0.02, rm.curFill);
+    rm.liq.scale.y = 3.5 * f;
+    rm.liqMat.color.copy(rm.color);
+    rm.liqMat.opacity = rec ? 0.32 : 0.16;
+    rm.edgeMat.color.copy(rm.color);
+    rm.edgeMat.opacity = selected ? 1 : hl ? 1 : 0.7;
+    rm.glassMat.color.copy(rm.color);
+    rm.glassMat.opacity = selected ? 0.18 : hl ? 0.2 : 0.07;
+  }
+
+  const raycaster = new THREE.Raycaster();
+  const ndc = new THREE.Vector2();
+  function pick(clientX, clientY, objects) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    ndc.set(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
+    raycaster.setFromCamera(ndc, camera);
+    const hits = raycaster.intersectObjects(objects, false);
+    return hits.length ? hits[0].object : null;
+  }
+
+  return { renderer, scene, camera, controls, rooms, hitMeshes, hubMeshes, labels, resize, flyTo, resetView, focusRoom, stepAnim, updateLabels, setRoomState, pick, home, FLOOR_LABEL };
+}

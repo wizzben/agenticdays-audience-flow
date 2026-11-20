@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import { normalizeSessions } from '../src/model/estimate.js';
+import { extractTopics } from '../src/model/topics.js';
+const raw = JSON.parse(fs.readFileSync('data/sessions.json'));
+const all = normalizeSessions(raw);
+const pm = all.filter((s) => s.start >= Date.parse('2026-11-20T12:00:00+01:00'));
+const r = extractTopics(all, pm, { maxKeywords: 25, maxTotal: 60 });
+console.log(r.topics.filter((t) => t.kind === 'keyword').map((t) => t.label + ' ' + t.potential.toFixed(2)).join(' | '));
+const s = pm.find((x) => x.id === '1309668');
+console.log(s.desc.slice(0, 900), '|', s.tools, '|', r.sessionTopics.get('1309668'));
