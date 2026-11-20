@@ -294,7 +294,12 @@ async function fetchRecording() {
   } catch (e) { /* silent: keep going with what we have */ }
   fetching = false;
 }
-if (!demo && !params.has('nofetch')) { setTimeout(fetchRecording, 800); setInterval(fetchRecording, 60000); }
+// Fetch the recording once on load. Keep re-fetching only while the event can still produce samples: the recorder
+// stops at the end of the window, so after a short grace period there is nothing new to get.
+if (!demo && !params.has('nofetch')) {
+  setTimeout(fetchRecording, 800);
+  const poll = setInterval(() => { if (Date.now() > win.t1 + 15 * 60000) clearInterval(poll); else fetchRecording(); }, 60000);
+}
 
 slowTick(S.t);
 requestAnimationFrame(frame);
