@@ -1,0 +1,1310 @@
+{
+ "fetched_at": "2026-11-20",
+ "source": "https://www.agenticdays.com/mcp",
+ "sessions": [
+  {
+   "id": "1250380",
+   "slug": "1250380-you-must-not-ssh-and-other-stories-from-building-our-sre",
+   "title": "\"YOU MUST NOT ssh!\" and Other Stories from Building Our SRE Agent",
+   "url": "https://www.agenticdays.com/session/1250380-you-must-not-ssh-and-other-stories-from-building-our-sre",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T09:20:00+01:00",
+   "ends_at": "2026-11-20T09:50:00+01:00",
+   "time": "Fri 20 Nov, 09:20-09:50",
+   "room": "Studio 4",
+   "spotlight": false,
+   "description": "Everyone is building SRE agents. Most of them are barely junior sysadmins in a trench coat — useful for \"how does X work?\", useless when PostgreSQL replication is lagging at 3 AM across three datacenters at your specific company with your specific Puppet module.\r\n\r\nWe started out obsessing over the tech stack, but after months in production, we learned a few hard truths: The agent framework? It doesn't really matter that much. The LLM model or vendor? Doesn't matter nearly as much as you think. Providing misleading docs? A massive problem. Fear of autonomy? Like handcuffing your agent and getting only 10% out of it. Not unit-testing the context? Likely you'll degrade in the future versions and lose people's trust.\r\n\r\nWe'll walk through what surprised us, what the agent still gets wrong, and why security is the hardest third nobody talks about. No vendor pitch, just a story from the trenches so you can get \"more realistic\" about this.",
+   "main_tools": "our take-away - not important, but Claude Agent SDK in our case",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Observability & Production",
+    "AI for Legacy &   Refactoring"
+   ],
+   "speakers": [
+    {
+     "name": "David Pech",
+     "slug": "david-pech",
+     "url": "https://www.agenticdays.com/speaker/david-pech",
+     "company": "Wrike",
+     "tagline": "Platform Engineer · CNCF Golden Kubestronaut"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/10"
+  },
+  {
+   "id": "1243898",
+   "slug": "1243898-a-practical-guide-to-fast-and-private-llms",
+   "title": "A Practical Guide to Fast and Private LLMs",
+   "url": "https://www.agenticdays.com/session/1243898-a-practical-guide-to-fast-and-private-llms",
+   "format": "Lightning Talk",
+   "duration": "7 min",
+   "starts_at": "2026-11-20T12:20:00+01:00",
+   "ends_at": "2026-11-20T12:27:00+01:00",
+   "time": "Fri 20 Nov, 12:20-12:27",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "A set of practical tips and tools for hobbyists and teams to run their own LLM in a private and sustainable setup. This talk gives people hands-on knowledge to decide on the right LLM architecture, how to optimize it, which hardware to run it on, and what software stack to go for. A whirlwind tour of how to roll your own AI for fun and profit.",
+   "main_tools": "Llama.cpp, Ollama, vLLM",
+   "topics": [
+    "Local AI, Inference & Open Models"
+   ],
+   "speakers": [
+    {
+     "name": "Lena Fuhrimann",
+     "slug": "lena-fuhrimann",
+     "url": "https://www.agenticdays.com/speaker/lena-fuhrimann",
+     "company": "bespinian",
+     "tagline": "Founder & Cloud Solution Architect"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/12"
+  },
+  {
+   "id": "1293601",
+   "slug": "1293601-adk-crash-course-from-beginner-to-expert",
+   "title": "ADK Crash Course - From Beginner To Expert",
+   "url": "https://www.agenticdays.com/session/1293601-adk-crash-course-from-beginner-to-expert",
+   "format": "Hands-On Session",
+   "duration": "75–90 min",
+   "starts_at": "2026-11-20T13:00:00+01:00",
+   "ends_at": "2026-11-20T14:15:00+01:00",
+   "time": "Fri 20 Nov, 13:00-14:15",
+   "room": "Studio 3 AB",
+   "spotlight": false,
+   "description": "You're about to step into the exciting world of AI agents. Forget simple chatbots that just answer questions. We’re diving deep into the Agent Development Kit (ADK) to build sophisticated, autonomous systems that can reason, plan, and use tools to accomplish complex tasks.\r\n\r\nPart 1: Hands-on with Agent Development Kit: Build custom AI agents using Python or Java and the Agent Development Kit (ADK). Learn ADK interfaces, project structure, and create a multi-agent example, progressing from a simple workflow to a complex system.\r\nPart 2: Connect to Remote Agents with ADK and A2A SDK: Deploy your ADK agent as a remote agent using the Agent2Agent (A2A) Python or Java SDK. Cover AgentCard preparation, A2A Server deployment, command-line querying, and enabling inter-agent communication. Learn how A2A protocol enables an interconnected AI ecosystem allowing agents to integrate and share capabilities.",
+   "main_tools": "ADK",
+   "topics": [
+    "Agent Frameworks",
+    "Multi-Agent Architectures",
+    "MCP & Agent Protocols"
+   ],
+   "speakers": [
+    {
+     "name": "Abdel Sghiouar",
+     "slug": "abdel-sghiouar",
+     "url": "https://www.agenticdays.com/speaker/abdel-sghiouar",
+     "company": "Google Cloud",
+     "tagline": "Cloud Developer Advocate · KubeCon Co-Chair · Kubernetes Podcast Host"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/13"
+  },
+  {
+   "id": "1251731",
+   "slug": "1251731-agent-on-the-wire-looking-inside-an-ai-coding-agent",
+   "title": "Agent on the Wire: Looking Inside an AI Coding Agent",
+   "url": "https://www.agenticdays.com/session/1251731-agent-on-the-wire-looking-inside-an-ai-coding-agent",
+   "format": "Hands-On Session",
+   "duration": "75–90 min",
+   "starts_at": "2026-11-20T15:20:00+01:00",
+   "ends_at": "2026-11-20T16:30:00+01:00",
+   "time": "Fri 20 Nov, 15:20-16:30",
+   "room": "Studio 1",
+   "spotlight": false,
+   "description": "What actually happens between giving an AI coding agent a task and receiving working software?\r\n\r\nIn this hands-on lab, participants will route a coding agent through an interception layer and inspect the interactions normally hidden behind the terminal interface. They will follow the instructions, context, tool definitions, tool calls, and results exchanged while the agent work effectively observing its visible “brain activity” in real time.\r\n\r\nParticipants will then use a coding agent to create a small project, capture the resulting traffic, and transform it into a visual HTML report. The preconfigured environment keeps the focus on experimentation rather than setup.\r\n\r\nAttendees leave with a practical mental model of how coding agents operate and a repeatable approach for analyzing and improving agent workflows.",
+   "main_tools": "opencode, claude code, codex",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Agent Frameworks",
+    "AI Evals & Testing",
+    "AI Observability & Production",
+    "AI Coding Tools"
+   ],
+   "speakers": [
+    {
+     "name": "Vincent G",
+     "slug": "vincent-g",
+     "url": "https://www.agenticdays.com/speaker/vincent-g",
+     "company": "letsboot",
+     "tagline": "AI Innovation Engineer"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/14"
+  },
+  {
+   "id": "1302471",
+   "slug": "1302471-agentic-ai-at-migros-online-autonomous-engineering-agents",
+   "title": "Agentic AI at Migros Online: Autonomous Engineering Agents and Conversational Shopping",
+   "url": "https://www.agenticdays.com/session/1302471-agentic-ai-at-migros-online-autonomous-engineering-agents",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T15:20:00+01:00",
+   "ends_at": "2026-11-20T15:50:00+01:00",
+   "time": "Fri 20 Nov, 15:20-15:50",
+   "room": "Studio 4",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "Migros Online",
+    "url": "https://www.migros.ch/"
+   },
+   "description": "AI agents are arriving at both ends of e-commerce at once. Inside product engineering organizations, they are starting to take on real delivery work: migrations, routine fixes, and the long tail of changes that quietly consume engineering focus. On the product, customers are beginning to shop through AI assistants instead of browsers, and they will expect products and baskets to be reachable from a conversation.\r\n\r\nAt Migros Online, the online supermarket of Switzerland's largest retail group, we are exploring both movements in parallel. On the engineering side, we are working toward autonomous agents that reliably handle background work, with the guardrails and context this requires. On the product, we are experimenting with conversational shopping by opening our catalogue to AI assistants through integrations such as MCP.\r\n\r\nIn this talk, we share why we believe an e-commerce company needs to invest on both sides at once, how we approached each experiment during our internal Hackweeks, and a look at our learnings: what worked, what did not, and what we would do differently.",
+   "main_tools": "Claude Code, Product MCP integration",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "MCP & Agent Protocols",
+    "Software Architecture with AI",
+    "Enterprise AI Adoption & Governance",
+    "Industry & Vertical Use Cases"
+   ],
+   "speakers": [
+    {
+     "name": "Sven Scheffel",
+     "slug": "sven-scheffel",
+     "url": "https://www.agenticdays.com/speaker/sven-scheffel",
+     "company": "Migros Online",
+     "tagline": "Staff Software Engineer"
+    },
+    {
+     "name": "Gabriel Dinant",
+     "slug": "gabriel-dinant",
+     "url": "https://www.agenticdays.com/speaker/gabriel-dinant",
+     "company": "Migros Online",
+     "tagline": "Staff Software Engineer"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/15"
+  },
+  {
+   "id": "1243798",
+   "slug": "1243798-agents-need-platforms-too-running-llm-and-agent-workloads",
+   "title": "Agents Need Platforms Too: Running LLM and Agent Workloads the Cloud-Native Way",
+   "url": "https://www.agenticdays.com/session/1243798-agents-need-platforms-too-running-llm-and-agent-workloads",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:40:00+01:00",
+   "ends_at": "2026-11-20T14:10:00+01:00",
+   "time": "Fri 20 Nov, 13:40-14:10",
+   "room": "Studio 6",
+   "spotlight": false,
+   "description": "Demos of AI agents are easy. Running them reliably is not. Once agents move from local experiments into production, familiar DevOps questions return: where do they run, how are they observed, how do they access tools and secrets, how do we control cost, and how do we recover when they fail? This talk shows how cloud-native infrastructure can support production-grade agentic systems. We will map the building blocks of an agent platform, from Kubernetes-based inference with open models to API gateways, tool access, observability, safety boundaries, and lifecycle operations. The goal is not to hype agents, but to show what it takes to operate them like real software.",
+   "main_tools": "Kubernetes, vLLM, LiteLLM, Kubeflow, OpenShift, Open Models, Agent APIs, Observability stack",
+   "topics": [
+    "MCP & Agent Protocols",
+    "AI Observability & Production",
+    "AI Security",
+    "Local AI, Inference & Open Models",
+    "AI in DevOps & Platform Engineering"
+   ],
+   "speakers": [
+    {
+     "name": "Aarno Aukia",
+     "slug": "aarno-aukia",
+     "url": "https://www.agenticdays.com/speaker/aarno-aukia",
+     "company": "VSHN",
+     "tagline": "Co-Founder & Partner"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/49"
+  },
+  {
+   "id": "1292080",
+   "slug": "1292080-agents-speak-protocol-why-standards-are-the-real",
+   "title": "Agents Speak Protocol: Why Standards Are the Real Infrastructure of AI",
+   "url": "https://www.agenticdays.com/session/1292080-agents-speak-protocol-why-standards-are-the-real",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:00:00+01:00",
+   "ends_at": "2026-11-20T11:30:00+01:00",
+   "time": "Fri 20 Nov, 11:00-11:30",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Every major computing revolution eventually standardized how things talk to each other. Before TCP/IP, networks spoke dialects. Before HTTP, every service invented its own wire format. Before REST, SOAP was the only \"enterprise\" answer. Each time, entropy was reduced not by building better applications, but by agreeing on how they connect.\r\n\r\nWe are at exactly that inflection point with AI agents.\r\n\r\nToday's agent ecosystem is a tower of Babel: agents speak different frameworks, tools are wired with one-off integrations, UIs are bolted on as afterthoughts, and client communication is reinvented per product. This is not a feature. It is entropy, and it is expensive.\r\n\r\nThis talk maps the emerging protocol stack that is finally bringing order: MCP for agent-to-tool context, A2A for peer-to-peer agent collaboration, A2UI and AG-UI/MCPUI for declarative and generative interfaces, and ACP for client-side orchestration. We will examine what each protocol solves, where its boundaries are, and — critically — how they complement rather than compete. You will see concrete architectures where MCP and A2A work side by side in the same system, each doing what it does best.\r\n\r\nAlong the way, we will draw parallels from protocol wars past: CORBA vs REST, SOAP vs JSON, WebSockets vs polling. History teaches that winners are rarely the most feature-rich; they are the simplest protocols that reduce the most uncertainty. The same pattern is already playing out in agentic AI.",
+   "topics": [
+    "Agent Frameworks",
+    "Multi-Agent Architectures",
+    "MCP & Agent Protocols"
+   ],
+   "speakers": [
+    {
+     "name": "Stefano Maestri",
+     "slug": "stefano-maestri",
+     "url": "https://www.agenticdays.com/speaker/stefano-maestri",
+     "company": "IBM",
+     "tagline": "Software Development Manager (Red Hat)"
+    },
+    {
+     "name": "Alessio Soldano",
+     "slug": "alessio-soldano",
+     "url": "https://www.agenticdays.com/speaker/alessio-soldano",
+     "company": "IBM",
+     "tagline": "Sr. Manager Software Engineering (Red Hat)"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/16"
+  },
+  {
+   "id": "1254403",
+   "slug": "1254403-ai-agility-is-spec-driven-development-bringing-back",
+   "title": "AI & Agility: Is Spec-Driven Development Bringing Back Waterfall? And How to Move Beyond It",
+   "url": "https://www.agenticdays.com/session/1254403-ai-agility-is-spec-driven-development-bringing-back",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:00:00+01:00",
+   "ends_at": "2026-11-20T13:30:00+01:00",
+   "time": "Fri 20 Nov, 13:00-13:30",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "With the rise of LLMs, a new promise has emerged: software development driven by specifications. Multi-agent systems, RAG, MCP... everything seems to converge toward an appealing idea: given enough context, AI can build an entire system.\r\n\r\nIn practice, however, this approach—often referred to as Spec-Driven Development (SDD)—quickly reveals its limitations. It assumes a perfectly understood context, known invariants, and an AI capable of filling every gap in the specification. The result is often the same: systems that look impressive in demos but fail in production, leaving behind a massive understanding debt.\r\n\r\nThis talk shares concrete lessons learned from real-world projects where AI is used daily in complex product environments.\r\n\r\nWe will explore:\r\n\r\nWhy SDD is a modern reincarnation of the Waterfall model, fundamentally incompatible with the complexity of real-world systems.\r\nHow human cognitive limitations (bounded rationality) also apply to the way we use LLMs.\r\nWhy treating an LLM as an unreliable accelerator radically changes the way we build software.\r\n\r\nWe will introduce a pragmatic alternative: Empirical Product Development (EPD), an approach built around:\r\n\r\nAtomic tasks\r\nA wall of feedback (tests, performance, system consistency, business validation)\r\nIterative and controlled progress\r\n\r\nThrough real examples, we will show how to:\r\n\r\nIntegrate AI into an agile development cycle without losing control\r\nAvoid black-box effects\r\nAccelerate delivery without compromising quality\r\n\r\nThis talk is aimed at practitioners already using AI in their day-to-day work who want to move beyond the hype and build systems that are truly robust in production.",
+   "main_tools": "Copilot",
+   "topics": [
+    "AI-Assisted Coding Practice"
+   ],
+   "speakers": [
+    {
+     "name": "Baptiste Macé",
+     "slug": "baptiste-mace",
+     "url": "https://www.agenticdays.com/speaker/baptiste-mace",
+     "company": "Arolla",
+     "tagline": "Agile / DevOps / Craft Coach"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/17"
+  },
+  {
+   "id": "1368894",
+   "slug": "1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified",
+   "title": "Beyond MCP - Supercharging your agents with a single unified data plane",
+   "url": "https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T10:20:00+01:00",
+   "ends_at": "2026-11-20T10:50:00+01:00",
+   "time": "Fri 20 Nov, 10:20-10:50",
+   "room": "Studio 6",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "Exasol",
+    "url": "https://www.exasol.com/"
+   },
+   "description": "Agents need context that's spread across many systems, and regulated organisations can't copy it all into one AI platform. The talk covers federating queries to where data lives, adding semantic context so agents reason over business meaning, and sustaining sub-second performance at agent-scale concurrency, ending with an end-to-end demo on sovereign infrastructure.",
+   "main_tools": "Exasol",
+   "topics": [
+    "MCP & Agent Protocols",
+    "RAG & Knowledge Retrieval"
+   ],
+   "speakers": [
+    {
+     "name": "Alexander Stigsen",
+     "slug": "alexander-stigsen",
+     "url": "https://www.agenticdays.com/speaker/alexander-stigsen",
+     "company": "Exasol",
+     "tagline": "Chief Product & Technology Officer"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/48"
+  },
+  {
+   "id": "1292484",
+   "slug": "1292484-beyond-prompts-models-evolving-architecture-for-agentic",
+   "title": "Beyond Prompts & Models: Evolving Architecture for Agentic Systems",
+   "url": "https://www.agenticdays.com/session/1292484-beyond-prompts-models-evolving-architecture-for-agentic",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T10:20:00+01:00",
+   "ends_at": "2026-11-20T10:50:00+01:00",
+   "time": "Fri 20 Nov, 10:20-10:50",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "As organizations experiment with enterprise agentic systems, discussions often center on models, frameworks, and tools. Far less attention is given to the recurring architectural decisions and engineering trade-offs that shape how these systems evolve over time.\r\n\r\nIn our session we present a practical architectural evolution model that emerged retrospectively from recurring architectural decisions and trade-offs, observed while iteratively prototyping and evolving enterprise agentic systems. The model organizes these recurring patterns into a series of evolution stages that help engineering teams understand where their architecture is today and which engineering challenges typically emerge next.\r\n\r\nDrawing on enterprise AI initiatives at Swisscom spanning knowledge management, product management and AI-assisted operations, our session traces the architectural decisions that shaped each stage of this evolution: from establishing data readiness as the foundation for context engineering; through rapid low-code prototyping for workflow validation on n8n; to rebuilding multi-agent architectures on the Strands Agents SDK under enterprise deployment constraints; from an early investment in vector-based RAG to a leaner vectorless RAG approach that unblocked us; standardizing agent capabilities via MCP; and finally toward architectural simplification by re-realizing the same workflows with Kiro, GitHub Copilot and reusable agent skills - thereby trading custom orchestration for a smaller footprint.\r\n\r\nBased on real-world implementations, this session demonstrates how successful evolution of enterprise agentic systems is driven less by model capability and more by architectural choices around orchestration, context engineering, interoperability, and architectural simplicity.",
+   "main_tools": "n8n, Strands Agents SDK, Claude Code, GitHub Copilot, MCP",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Agent Frameworks",
+    "Multi-Agent Architectures",
+    "MCP & Agent Protocols",
+    "RAG & Knowledge Retrieval",
+    "AI Coding Tools",
+    "Software Architecture with AI"
+   ],
+   "speakers": [
+    {
+     "name": "Manisha De",
+     "slug": "manisha-de",
+     "url": "https://www.agenticdays.com/speaker/manisha-de",
+     "company": "Swisscom",
+     "tagline": "Product Owner"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/18"
+  },
+  {
+   "id": "1252760",
+   "slug": "1252760-build-your-own-coding-agent",
+   "title": "Build your own Coding Agent",
+   "url": "https://www.agenticdays.com/session/1252760-build-your-own-coding-agent",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T15:20:00+01:00",
+   "ends_at": "2026-11-20T15:50:00+01:00",
+   "time": "Fri 20 Nov, 15:20-15:50",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Coding agents feel like magic: point one at a codebase, ask it to fix a bug, and it reads files, edits code, runs commands, and iterates until the task is done. But under the hood, the core ideas are surprisingly approachable.\r\n\r\nIn this live-coding talk, we’ll build a small coding agent from scratch and use it to demystify how tools like Claude Code or Lovable work. We’ll look at the agent harness: the application layer that talks to the model, maintains context, exposes tools, interprets tool calls, etc.",
+   "main_tools": "We're building it from scratch in TypeScript",
+   "topics": [
+    "MCP & Agent Protocols",
+    "AI Coding Tools",
+    "AI-Assisted Coding Practice",
+    "Software Architecture with AI"
+   ],
+   "speakers": [
+    {
+     "name": "Max Gfeller",
+     "slug": "max-gfeller",
+     "url": "https://www.agenticdays.com/speaker/max-gfeller",
+     "company": "Lovable",
+     "tagline": "Technical Evangelist"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/31"
+  },
+  {
+   "id": "1247157",
+   "slug": "1247157-build-your-own-production-ready-agentic-apps",
+   "title": "Build Your Own Production-Ready Agentic Apps",
+   "url": "https://www.agenticdays.com/session/1247157-build-your-own-production-ready-agentic-apps",
+   "format": "Hands-On Session",
+   "duration": "75–90 min",
+   "starts_at": "2026-11-20T13:00:00+01:00",
+   "ends_at": "2026-11-20T14:15:00+01:00",
+   "time": "Fri 20 Nov, 13:00-14:15",
+   "room": "Studio 1",
+   "spotlight": false,
+   "description": "Most agentic AI demos stop at \"hello world.\" In this lab, attendees will build a real agentic application using Quarkus + LangChain4j (Java) and iteratively evolve it from a simple LLM client into a production-minded workflow.\r\n\r\nWe start with a minimal baseline, then add tool/function calling, external capability integration with MCP, and most of all, multi-step agentic orchestration patterns. Along the way, we validate each step with observable behavior, discuss trade-offs, and compare agentic vs non-agentic alternatives to avoid over-engineering.\r\n\r\nBy the end, every participant leaves with a running Java project and a practical blueprint they can reuse in their own team: when to use agents, when not to, how to structure tools and orchestrate agents, and how to keep reliability, safety, and cost in check.",
+   "main_tools": "Quarkus LangChain4j",
+   "topics": [
+    "Agent Frameworks",
+    "Multi-Agent Architectures"
+   ],
+   "speakers": [
+    {
+     "name": "Kevin Dubois",
+     "slug": "kevin-dubois",
+     "url": "https://www.agenticdays.com/speaker/kevin-dubois",
+     "company": "IBM",
+     "tagline": "Senior Principal Developer Advocate · Java Champion · CNCF DevEx TAG Lead"
+    },
+    {
+     "name": "Dimitris Andreadis",
+     "slug": "dimitris-andreadis",
+     "url": "https://www.agenticdays.com/speaker/dimitris-andreadis",
+     "company": "Red Hat / IBM",
+     "tagline": "Sr. Engineering Director, Quarkus & Cloud Native Runtimes"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/19"
+  },
+  {
+   "id": "1286299",
+   "slug": "1286299-building-authorization-for-agentic-rag-systems",
+   "title": "Building Authorization for Agentic RAG Systems",
+   "url": "https://www.agenticdays.com/session/1286299-building-authorization-for-agentic-rag-systems",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:00:00+01:00",
+   "ends_at": "2026-11-20T11:30:00+01:00",
+   "time": "Fri 20 Nov, 11:00-11:30",
+   "room": "Studio 4",
+   "spotlight": false,
+   "description": "We’ve recently seen the rise of Retrieval Augmented Generation (RAG) systems. With the proliferation of AI Agents & LLMs in Enterprise, the next step in the evolution is Agentic RAG. But for widespread adoption of Agentic RAG systems in enterprise there’s one piece of the puzzle that needs to be solved and that’s fine-grained authorization.\r\n\r\nThis talk is a deep dive into how modern authorization systems can ensure that AI Agents have access only to authorized data. The talk will look at why the Google Zanzibar model of authorization which uses Relationship-Based Access Control (ReBAC) is well suited to handle dynamic, relationship-driven authorization at scale. The talk explains how the Google Zanzibar system works under the hood, and how to apply it to Agentic RAG with techniques such as pre-filteration and post-filteration. As a bonus also learn about how OpenAI achieves authorization at scale with ChatGPT Apps.\r\n\r\nThe talk will also include a live coding demo implementing authorization for Agentic RAG using Open Source tools such as Weaviate, Langchain, and SpiceDB.",
+   "main_tools": "LangChain",
+   "topics": [
+    "RAG & Knowledge Retrieval",
+    "AI Security",
+    "Enterprise AI Adoption & Governance"
+   ],
+   "speakers": [
+    {
+     "name": "Sohan Maheshwar",
+     "slug": "sohan-maheshwar",
+     "url": "https://www.agenticdays.com/speaker/sohan-maheshwar",
+     "company": "AuthZed",
+     "tagline": "Developer Advocate Lead · AAIF Ambassador"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/20"
+  },
+  {
+   "id": "1305346",
+   "slug": "1305346-can-we-trust-autonomous-agents-panel-discussion",
+   "title": "Can We Trust Autonomous Agents? (Panel Discussion)",
+   "url": "https://www.agenticdays.com/session/1305346-can-we-trust-autonomous-agents-panel-discussion",
+   "format": "Panel Discussion",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T15:20:00+01:00",
+   "ends_at": "2026-11-20T15:50:00+01:00",
+   "time": "Fri 20 Nov, 15:20-15:50",
+   "room": "Studio 3 AB",
+   "spotlight": false,
+   "description": "Panel discussion. How much autonomy can we hand to agents in production — and what has to be in place before we do? Guardrails, evaluation, observability and human oversight, discussed by practitioners from different corners of the field. Moderated by Maxim Salnikov. Further panelists to be announced.",
+   "topics": [
+    "AI Evals & Testing",
+    "AI Observability & Production",
+    "AI Ethics & Responsibility"
+   ],
+   "speakers": [
+    {
+     "name": "Maxim Salnikov",
+     "slug": "maxim-salnikov",
+     "url": "https://www.agenticdays.com/speaker/maxim-salnikov",
+     "company": "Microsoft",
+     "tagline": "Senior Solution Engineer, AI-Native Dev Tools · Panel Moderator"
+    },
+    {
+     "name": "Jose Luis Latorre Millas",
+     "slug": "jose-luis-latorre-millas",
+     "url": "https://www.agenticdays.com/speaker/jose-luis-latorre-millas",
+     "company": "Swiss Life",
+     "tagline": "Agentic & Software Architect · AgentEval creator · Microsoft AI MVP"
+    },
+    {
+     "name": "Serena Sensini",
+     "slug": "serena-sensini",
+     "url": "https://www.agenticdays.com/speaker/serena-sensini",
+     "company": "TheRedCode",
+     "tagline": "CTO @ Welyk · Innovation Leader @ Dedalus · author · Panelist"
+    },
+    {
+     "name": "Markus Leutwyler",
+     "slug": "markus-leutwyler",
+     "url": "https://www.agenticdays.com/speaker/markus-leutwyler",
+     "company": "VisionPilot",
+     "tagline": "Founder · Hardware · Software · People"
+    },
+    {
+     "name": "Lize Raes",
+     "slug": "lize-raes",
+     "url": "https://www.agenticdays.com/speaker/lize-raes",
+     "company": "LangChain4j",
+     "tagline": "Software Engineer"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/21"
+  },
+  {
+   "id": "1294885",
+   "slug": "1294885-deploying-agents-at-scale-what-enterprise-adoption-actually",
+   "title": "Deploying Agents at Scale: What Enterprise Adoption Actually Looks Like",
+   "url": "https://www.agenticdays.com/session/1294885-deploying-agents-at-scale-what-enterprise-adoption-actually",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T10:20:00+01:00",
+   "ends_at": "2026-11-20T10:50:00+01:00",
+   "time": "Fri 20 Nov, 10:20-10:50",
+   "room": "Studio 4",
+   "spotlight": false,
+   "description": "I spend my days inside enterprise AI rollouts — standing up the platforms, watching what agents do at scale, and cleaning up after them. This talk covers where the deployments and the research line up, and where they contradict each other.\r\n\r\nThe evidence doesn't agree with itself. METR's 2025 randomized controlled trial found experienced developers 19% slower with AI while they believed they were 20% faster — and its 2026 follow-up couldn't measure the gap cleanly, because heavy AI users now refuse to work without it. Google's DORA study of nearly 5,000 practitioners says strong engineering foundations protect you. Faros AI's telemetry across 22,000 developers found the opposite: throughput up 66%, incidents per pull request up 243%, in mature organizations that should have been safe. I'll show you which read holds up.\r\n\r\nThen the enterprise layer — JPMorgan's 200,000-employee rollout, and the MIT-versus-Wharton disagreement over whether any of this returns money. The organizations pulling ahead didn't buy a better model. They redesigned the work around the tool, added guardrails, and measured against a real baseline before scaling. AI amplifies whatever system it lands in. Point it at a mess and it produces the mess faster.\r\n\r\nYou will leave with a clear understanding of what levers increase enterprise AI success, and what levers cause it to fail.",
+   "main_tools": "Not tool-specific — this is a cross-tool evidence keynote. If a single value is mandatory, enter \"Claude Code\" as the most representative agentic coding tool referenced; otherwise list the studied tools (Cursor, GitHub Copilot, Claude Code).",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI-Assisted Coding Practice",
+    "Enterprise AI Adoption & Governance",
+    "AI Strategy & Value Realization"
+   ],
+   "speakers": [
+    {
+     "name": "Michael Rishi Forrester",
+     "slug": "michael-rishi-forrester",
+     "url": "https://www.agenticdays.com/speaker/michael-rishi-forrester",
+     "company": "Accenture",
+     "tagline": "AI for Leadership & Organizations Lead · 1M+ engineers trained"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/24"
+  },
+  {
+   "id": "1274697",
+   "slug": "1274697-from-a-rag-demo-to-a-rag-system",
+   "title": "From a RAG Demo to a RAG System",
+   "url": "https://www.agenticdays.com/session/1274697-from-a-rag-demo-to-a-rag-system",
+   "format": "Lightning Talk",
+   "duration": "7 min",
+   "starts_at": "2026-11-20T12:28:00+01:00",
+   "ends_at": "2026-11-20T12:35:00+01:00",
+   "time": "Fri 20 Nov, 12:28-12:35",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Building a RAG demo is easy. Making it reliable is a different challenge.\r\n\r\nReal-world RAG systems face messy documents, stale and unauthorized sources, and answers that sound convincing but lack sufficient evidence. This lightning talk shows where RAG breaks beyond the demo, why vector search alone isn’t enough, and how a simple contract — Find → Verify → Observe — makes retrieval, evidence and failures visible.\r\n\r\nAnd as RAG becomes agentic, a new question emerges: when should an agent search again, and when does it have enough to answer?",
+   "main_tools": "Production RAG Systems, Vector Databases, Embeddings, Hybrid Search, Evals",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "RAG & Knowledge Retrieval"
+   ],
+   "speakers": [
+    {
+     "name": "Richa Dinesh Tamhane",
+     "slug": "richa-dinesh-tamhane",
+     "url": "https://www.agenticdays.com/speaker/richa-dinesh-tamhane",
+     "company": "amnis",
+     "tagline": "Data & AI Scientist"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/25"
+  },
+  {
+   "id": "1301641",
+   "slug": "1301641-from-copilot-to-the-dark-factory",
+   "title": "From Copilot to the Dark Factory",
+   "url": "https://www.agenticdays.com/session/1301641-from-copilot-to-the-dark-factory",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:00:00+01:00",
+   "ends_at": "2026-11-20T13:30:00+01:00",
+   "time": "Fri 20 Nov, 13:00-13:30",
+   "room": "Studio 4",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "re:cinq",
+    "url": "https://re-cinq.com/"
+   },
+   "description": "AI coding tools make developers faster, but they do not automatically make organisations ship faster. PR volume rises, review queues grow, tests weaken, and context, security, and platform bottlenecks become visible. AI does not remove the constraint; it moves it.\r\n\r\nThis talk combines the AI Adoption Ladder with the emerging architecture of software factories. It shows how teams progress from first licences to agentic delivery, and the six systems required to scale safely: orchestration, sandboxes, context, validation, governance, and learning loops.\r\n\r\nAttendees will learn how to identify their next bottleneck and build beyond “everyone gets Copilot.”\r\n\r\nLicences create activity. Software factories create durable advantage.",
+   "topics": [
+    "Multi-Agent Architectures",
+    "Spec-Driven & Agentic SDLC",
+    "Enterprise AI Adoption & Governance"
+   ],
+   "speakers": [
+    {
+     "name": "Pini Reznik",
+     "slug": "pini-reznik",
+     "url": "https://www.agenticdays.com/speaker/pini-reznik",
+     "company": "re:cinq",
+     "tagline": "CEO & Co-Founder · AI Native Transformations"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/26"
+  },
+  {
+   "id": "1309668",
+   "slug": "1309668-fsi-transformation-at-scale-sovereignty-compliance",
+   "title": "FSI Transformation at Scale: Sovereignty, Compliance & Production Realities",
+   "url": "https://www.agenticdays.com/session/1309668-fsi-transformation-at-scale-sovereignty-compliance",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T15:20:00+01:00",
+   "ends_at": "2026-11-20T15:50:00+01:00",
+   "time": "Fri 20 Nov, 15:20-15:50",
+   "room": "Studio 6",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "Atlassian",
+    "url": "https://www.atlassian.com/"
+   },
+   "description": "Every financial institution aspires to become 'AI-native.' They promise hyper-automated engineering, autonomous workflows, and unprecedented speed. But when faced with strict data sovereignty, evolving compliance, and complex production environments, how realistic is this goal? Is an AI-native FSI truly achievable, or just a regulatory pipe dream?\r\n\r\nIn this candid fireside chat, Sergiu Petean (EMEA Field CTO at Atlassian) is joined by Baris Yorganci (Head of Division at BarmeniaGothaer, a leading German insurance group) to dissect the true pace and feasibility of AI-driven transformation. Moving beyond traditional retail banking, they explore actionable lessons from across the broader ecosystem—including high-velocity neo-banks, digital insurers, and innovative MGAs.\r\nRather than treating regulation as an insurmountable barrier, Sergiu and his guest will map out how leading institutions turn data sovereignty, compliance requirements, and production constraints into structural guardrails for safe, scalable AI innovation.",
+   "speakers": [
+    {
+     "name": "Sergiu Petean",
+     "slug": "sergiu-petean",
+     "url": "https://www.agenticdays.com/speaker/sergiu-petean",
+     "company": "Atlassian",
+     "tagline": "EMEA Field CTO"
+    },
+    {
+     "name": "Baris Yorganci",
+     "slug": "baris-yorganci",
+     "url": "https://www.agenticdays.com/speaker/baris-yorganci",
+     "company": "BarmeniaGothaer",
+     "tagline": "Head of Division"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/27"
+  },
+  {
+   "id": "1244188",
+   "slug": "1244188-hands-on-spec-driven-development",
+   "title": "Hands-on Spec-Driven Development",
+   "url": "https://www.agenticdays.com/session/1244188-hands-on-spec-driven-development",
+   "format": "Hands-On Session",
+   "duration": "75–90 min",
+   "starts_at": "2026-11-20T10:20:00+01:00",
+   "ends_at": "2026-11-20T12:00:00+01:00",
+   "time": "Fri 20 Nov, 10:20-12:00",
+   "room": "Studio 1",
+   "spotlight": false,
+   "description": "In this lab, participants will learn how to develop software efficiently and systematically using Spec-driven Development (SDD) and the AI ​​Unified Process (AIUP).\r\n\r\nUsing a practical example project, participants will be guided step by step through the entire development process: from the initial vision and requirements specification to implementation.\r\n\r\nThe lab demonstrates how to effectively use AI-powered tools to generate executable software from clearly defined specifications. We will use a simple Java stack to focus on the specifications. Participants will work with an AI agent, integrate skills and MCPs, and experience firsthand how these tools accelerate the development process.\r\n\r\nThis lab is designed for developers who want to understand how structured specifications and AI tools work together to create high-quality software.\r\n\r\nRequired infrastructure:\r\n- AI agent (Claude Code recommended, Copilot CLI, Codex, or others possible)\r\n- Java 25\r\n- An editor or IDE",
+   "main_tools": "Claude Code but other agents are possible as well",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Spec-Driven & Agentic SDLC"
+   ],
+   "speakers": [
+    {
+     "name": "Simon Martinelli",
+     "slug": "simon-martinelli",
+     "url": "https://www.agenticdays.com/speaker/simon-martinelli",
+     "company": "martinelli.ch",
+     "tagline": "Programming Architect · Java Champion · Oracle ACE Pro"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/28"
+  },
+  {
+   "id": "1385732",
+   "slug": "1385732-how-do-you-know-your-coding-agent-actually-helps",
+   "title": "How do you know your coding agent actually helps?",
+   "url": "https://www.agenticdays.com/session/1385732-how-do-you-know-your-coding-agent-actually-helps",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T16:00:00+01:00",
+   "ends_at": "2026-11-20T16:30:00+01:00",
+   "time": "Fri 20 Nov, 16:00-16:30",
+   "room": "Studio 4",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "LogicStar",
+    "url": "https://logicstar.ai/"
+   },
+   "description": "Agents now write most PRs in many teams. Often another agent reviews them. Yet almost nothing merges without a human, because nobody can show where the agents are safe to trust. Writing code got automated. Trusting it didn't.\r\n\r\nPublic benchmarks won't tell you. On real applications, agents resolve 38.6% fewer issues than on popular libraries (SWA-Bench, ICML 2025). Your git history is a better benchmark. Every revert, hotfix and follow-up fix points back to a PR, the agent that wrote it and the review that missed it.\r\n\r\nThis talk shows how to measure coding and review agents on what actually shipped, with data from real teams. 1 in 5 PRs that a review agent graded \"perfect\" still introduced a bug. On 78% of PRs, human review changed nothing. We trace one escaped bug end to end, go through the four failure modes behind most review misses, and give you a recipe to run on one repo next week.",
+   "main_tools": "Tool-agnostic: any coding or code review agent (Claude Code, GitHub Copilot, Cursor, review bots), measured against your own git history",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Evals & Testing",
+    "AI-Assisted Coding Practice",
+    "Spec-Driven & Agentic SDLC"
+   ],
+   "speakers": [
+    {
+     "name": "Boris Paskalev",
+     "slug": "boris-paskalev",
+     "url": "https://www.agenticdays.com/speaker/boris-paskalev",
+     "tagline": "CEO & founder of LogicStar.ai"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/50"
+  },
+  {
+   "id": "1282535",
+   "slug": "1282535-human-in-the-loop-is-you-a-guide-to-working-with-multiple",
+   "title": "Human-in-the-Loop Is You: A Guide to Working With Multiple Coding Agents",
+   "url": "https://www.agenticdays.com/session/1282535-human-in-the-loop-is-you-a-guide-to-working-with-multiple",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T16:00:00+01:00",
+   "ends_at": "2026-11-20T16:30:00+01:00",
+   "time": "Fri 20 Nov, 16:00-16:30",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "\"Human-in-the-loop\" is supposed to mean a person makes the judgment calls a model can't. In practice, when Claude Code, Codex, and Cursor are all open at once, it usually means something dumber: copy-pasting the same bug report into three different chat windows, re-explaining context each time, and losing track of which agent already tried which fix.\r\n\r\nIs a meta-harness the solution? This talk digs into what that would actually take: combining multiple coding agents into a single workflow rather than three separate ones, setting spend caps and approval policies rather than manually babysitting every action, and sharing a live session so a teammate can review or co-drive rather than screen-sharing a terminal.\r\n\r\nExpect a live demo, a few lessons learned, and a verdict on whether it works.",
+   "main_tools": "Claude Code, Codex, Omnigent",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Coding Tools"
+   ],
+   "speakers": [
+    {
+     "name": "Oleksandra Bovkun",
+     "slug": "oleksandra-bovkun",
+     "url": "https://www.agenticdays.com/speaker/oleksandra-bovkun",
+     "company": "Databricks",
+     "tagline": "Developer Advocate"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/29"
+  },
+  {
+   "id": "1305338",
+   "slug": "1305338-just-build-orchestrating-your-agents-with-codex",
+   "title": "Just Build — Orchestrating your Agents with Codex",
+   "url": "https://www.agenticdays.com/session/1305338-just-build-orchestrating-your-agents-with-codex",
+   "format": "Hands-On Session",
+   "duration": "75–90 min",
+   "starts_at": "2026-11-20T10:20:00+01:00",
+   "ends_at": "2026-11-20T12:00:00+01:00",
+   "time": "Fri 20 Nov, 10:20-12:00",
+   "room": "Studio 3 AB",
+   "spotlight": false,
+   "description": "A hands-on lab guided by OpenAI: see how you can orchestrate your agents with Codex. Follow along step by step on your own laptop, from first prompt to a working agent-driven workflow. Setup instructions and requirements will be shared before the event.",
+   "main_tools": "OpenAI Codex",
+   "topics": [
+    "Agent Frameworks",
+    "AI Coding Tools",
+    "AI-Assisted Coding Practice"
+   ],
+   "speakers": [
+    {
+     "name": "Abbas Tutcuoglu",
+     "slug": "abbas-tutcuoglu",
+     "url": "https://www.agenticdays.com/speaker/abbas-tutcuoglu",
+     "company": "OpenAI",
+     "tagline": "Go-to-Market, Strategic AI Deployment · Caltech"
+    },
+    {
+     "name": "Jules Giroul",
+     "slug": "jules-giroul",
+     "url": "https://www.agenticdays.com/speaker/jules-giroul",
+     "company": "OpenAI",
+     "tagline": "Software Engineer · University of Edinburgh"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/30"
+  },
+  {
+   "id": "1241628",
+   "slug": "1241628-migration-or-migraine-what-no-one-tells-you-about-using-llms",
+   "title": "Migration or migraine: What no one tells you about using LLMs",
+   "url": "https://www.agenticdays.com/session/1241628-migration-or-migraine-what-no-one-tells-you-about-using-llms",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T09:20:00+01:00",
+   "ends_at": "2026-11-20T09:50:00+01:00",
+   "time": "Fri 20 Nov, 09:20-09:50",
+   "room": "Studio 3 AB",
+   "spotlight": false,
+   "description": "We had a task stuck forever in our backlog. A task so simple, yet so tedious that our team just kept postponing it. Even our bored intern didn't want to do it. The task: upgrade each framework used in our managed authentication solution to the latest version, without ruining our test coverage or breaking production. A task perfect for AI. Or so we thought...\r\n\r\nAs it turns out, some coding tasks lend themselves to AI application better than others. Is a one-time migration involving ~100 components of a system actively used in production a good use case? How does the hype compare to the reality?\r\n\r\nIn this talk, I'll share our experience using LLMs to perform a seemingly simple but surprisingly challenging migration. I'll discuss what went as expected, what surprised us, share the takeaways related to developer experience, efficiency, and quality, and go over what both skeptics and optimists get wrong about AI.",
+   "main_tools": "Research reviews, not limited to specific LLMs or technloogy.",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Spec-Driven & Agentic SDLC"
+   ],
+   "speakers": [
+    {
+     "name": "Warren Parad",
+     "slug": "warren-parad",
+     "url": "https://www.agenticdays.com/speaker/warren-parad",
+     "company": "Authress",
+     "tagline": "CTO & Security Specialist · AWS Community Builder"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/32"
+  },
+  {
+   "id": "1312296",
+   "slug": "1312296-millions-of-exceptions-a-day-getting-bedrock-and-agentcore",
+   "title": "Millions of exceptions a day: getting Bedrock and AgentCore right",
+   "url": "https://www.agenticdays.com/session/1312296-millions-of-exceptions-a-day-getting-bedrock-and-agentcore",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T09:20:00+01:00",
+   "ends_at": "2026-11-20T09:50:00+01:00",
+   "time": "Fri 20 Nov, 09:20-09:50",
+   "room": "Millennium",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "copebit",
+    "url": "https://www.copebit.ch/"
+   },
+   "description": "BLP's agentic AI platform resolves millions of exceptions every day across hundreds of enterprise customers in more than 40 countries. copebit builds and operates the AWS foundation that powers it. This talk explores both sides of the equation: the agentic AI platform and the infrastructure that makes it enterprise-ready.\r\n\r\nFirst, the production system. Rather than relying on document retrieval, BLP mirrors each customer’s ERP environment — including master data, business rules, and process logic — in the BLP Digital Twin. More than 300 pre-trained AI agents operate against this structured model through 30+ standard ERP integrations. The most appropriate AI model is selected for each processing step through Amazon Bedrock, leveraging Anthropic’s Claude Sonnet and Claude Opus models alongside Gemma, with all inference running in European AWS regions.\r\n\r\nThen, the lessons for your own implementation. Drawing on our experience building AWS foundations for Swiss enterprises and operating agentic AI platforms on Amazon Bedrock and Amazon Bedrock AgentCore, we explore four architectural decisions that determine whether an enterprise agent platform can withstand a security review:\r\n\r\nHow user identity and permissions propagate through to target systems.\r\nHow to manage the size of the tool catalog without compromising context efficiency or cost.\r\nHow to ensure endpoint stability as the platform evolves.\r\nHow to make the registration of new tools a governed, reviewed change.\r\n\r\nFor each decision, we share the architectural trade-offs, practical lessons, and failure modes encountered along the way.\r\n\r\nAttendees will leave with a real-world perspective on what it takes to build, secure, and operate agentic AI at enterprise scale.",
+   "main_tools": "Amazon Bedrock, Amazon Bedrock AgentCore",
+   "topics": [
+    "Multi-Agent Architectures",
+    "AI Security",
+    "Enterprise AI Adoption & Governance"
+   ],
+   "speakers": [
+    {
+     "name": "Marco Kuendig",
+     "slug": "marco-kuendig",
+     "url": "https://www.agenticdays.com/speaker/marco-kuendig",
+     "company": "copebit",
+     "tagline": "CTO"
+    },
+    {
+     "name": "Davide Walder",
+     "slug": "davide-walder",
+     "url": "https://www.agenticdays.com/speaker/davide-walder",
+     "company": "BLP Digital",
+     "tagline": "Head of Cloud Infrastructure"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/11"
+  },
+  {
+   "id": "1305345",
+   "slug": "1305345-nooa-inside-nvidia-s-object-oriented-agent-harness",
+   "title": "NOOA: Inside NVIDIA's Object-Oriented Agent Harness",
+   "url": "https://www.agenticdays.com/session/1305345-nooa-inside-nvidia-s-object-oriented-agent-harness",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:40:00+01:00",
+   "ends_at": "2026-11-20T12:10:00+01:00",
+   "time": "Fri 20 Nov, 11:40-12:10",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "An agent is only as good as the harness around the model. At NVIDIA, Matt's team built NOOA (NVIDIA Labs Object-Oriented Agents), an open-source research preview that treats the agent as a Python object: typed input/output, pass by reference on live objects, code as action, programmable loop engineering, explicit object state, and model-callable harness APIs.\r\n\r\nMatt walks through these six capabilities, shows how NOOA runs inside NVIDIA OpenShell, and what they buy you in numbers: 82.2% on SWE-bench Verified, 50.2% mean RHAE on ARC-AGI-3 and 86.8% on CyberGym L1 - the top-scoring open-source agent there, at roughly half the token cost of comparable harnesses.",
+   "main_tools": "NOOA",
+   "topics": [
+    "Agent Frameworks"
+   ],
+   "speakers": [
+    {
+     "name": "Matt Staats",
+     "slug": "matt-staats",
+     "url": "https://www.agenticdays.com/speaker/matt-staats",
+     "company": "NVIDIA",
+     "tagline": "Principal Engineer · Agentic AI evaluation & harnesses"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/33"
+  },
+  {
+   "id": "1279518",
+   "slug": "1279518-ocr-at-swiss-post-the-case-for-small-language-models",
+   "title": "OCR at Swiss Post: The Case for Small Language Models",
+   "url": "https://www.agenticdays.com/session/1279518-ocr-at-swiss-post-the-case-for-small-language-models",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T14:20:00+01:00",
+   "ends_at": "2026-11-20T14:50:00+01:00",
+   "time": "Fri 20 Nov, 14:20-14:50",
+   "room": "Studio 4",
+   "spotlight": false,
+   "description": "Everyone reaches for a frontier LLM by default — and then the bill, the latency, and the data-privacy questions arrive. But public routing research (RouteLLM, Microsoft's Hybrid LLM) shows that 40–60% of typical queries can be handled by a smaller model with no measurable drop in quality — and for specialized, bounded tasks, that number easily explodes toward the vast majority.\r\n\r\nAt Swiss Post, we put this to the test. We built a centrally self-hosted platform around a Small Language Model, served with vLLM on Kubernetes with GPUs, using OCR as our real-world case. The result: lower cost, better latency, full data sovereignty — and far less operational complexity than the \"you can't self-host in production\" narrative suggests.\r\n\r\nThis talk makes the case for SLMs as a serious production strategy, not a compromise. We share a candid comparison of cost, accuracy, and performance against LLM alternatives, how we kept sensitive citizen data fully in-house, and the architecture that makes self-hosting genuinely approachable.\r\n\r\nThe core message: an LLM is not a Swiss Army knife. For a huge share of real workloads, a specialized, self-hosted SLM is cheaper, faster, more private — and easier to ship than you'd expect. We close with the question that reframed our thinking: how many of your requests actually need an LLM in the end?",
+   "main_tools": "vLLM — the inference engine at the core of the self-hosted SLM platform (served on Kubernetes with GPUs).",
+   "topics": [
+    "Local AI, Inference & Open Models",
+    "Software Architecture with AI",
+    "Enterprise AI Adoption & Governance"
+   ],
+   "speakers": [
+    {
+     "name": "Huriel Reichel",
+     "slug": "huriel-reichel",
+     "url": "https://www.agenticdays.com/speaker/huriel-reichel",
+     "company": "Swiss Post",
+     "tagline": "ML Platform Engineer & MLOps Product Owner"
+    },
+    {
+     "name": "Oliver Hofmann",
+     "slug": "oliver-hofmann",
+     "url": "https://www.agenticdays.com/speaker/oliver-hofmann",
+     "company": "Swiss Post",
+     "tagline": "Data Scientist"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/34"
+  },
+  {
+   "id": "1363422",
+   "slug": "1363422-open-agentic-ai-without-lock-in-the-ibm-approach-with",
+   "title": "Open Agentic AI Without Lock-In: The IBM Approach with  watsonx Orchestrate",
+   "url": "https://www.agenticdays.com/session/1363422-open-agentic-ai-without-lock-in-the-ibm-approach-with",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T14:20:00+01:00",
+   "ends_at": "2026-11-20T14:50:00+01:00",
+   "time": "Fri 20 Nov, 14:20-14:50",
+   "room": "Studio 6",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "TD SYNNEX",
+    "url": "https://www.tdsynnex.com/"
+   },
+   "description": "Agentic AI is transforming how organizations automate work, but many solutions come with platform dependencies and vendor lock-in. In this session, discover how IBM watsonx Orchestrate enables an open approach to Agentic AI, allowing organizations to connect agents, models, data sources, and business applications across their existing technology landscape.\r\n\r\nLearn how to build AI-powered workflows that span multiple systems, leverage the best models for each task, and orchestrate work across the enterprise without being tied to a single vendor ecosystem. Through practical demonstrations and real-world examples, you'll see how watsonx Orchestrate helps organizations move from AI assistants to autonomous, business-driven agents that deliver measurable outcomes.",
+   "main_tools": "watsonx Orchestrate",
+   "topics": [
+    "Multi-Agent Architectures"
+   ],
+   "speakers": [
+    {
+     "name": "Domenic Largiadèr",
+     "slug": "domenic-largiader",
+     "url": "https://www.agenticdays.com/speaker/domenic-largiader",
+     "company": "IBM",
+     "tagline": "Partner Technical Specialist, Data & AI"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/47"
+  },
+  {
+   "id": "1286069",
+   "slug": "1286069-reachy-mini-giving-a-body-to-ai",
+   "title": "Reachy mini: Giving a body to AI",
+   "url": "https://www.agenticdays.com/session/1286069-reachy-mini-giving-a-body-to-ai",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T08:45:00+01:00",
+   "ends_at": "2026-11-20T09:10:00+01:00",
+   "time": "Fri 20 Nov, 08:45-09:10",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Large language models can reason, generate code, and hold conversations. But they remain trapped behind screens. If AI is to become truly useful in our daily environments, it needs a body, a presence, and natural ways to interact with us.\r\nIn this talk, I’ll present Reachy Mini, an open and developer-friendly robot designed to explore what embodied AI can look like today. I’ll walk through how we are building its core software stack, from multimodal perception to real-time voice interaction, and why voice is emerging as the most natural interface for physical AI. We will look at how speech-to-speech pipelines, local inference, and modular backends allow Reachy Mini to move beyond scripted demos and into responsive, real-world interaction.\r\nYou will leave with a clearer understanding of what it takes to give AI a body, why voice-first interfaces matter, and how open tools can accelerate the next generation of interactive robotics.",
+   "main_tools": "Reachy Mini",
+   "topics": [
+    "Local AI, Inference & Open Models",
+    "Voice & Multimodal Agents",
+    "Industry & Vertical Use Cases"
+   ],
+   "speakers": [
+    {
+     "name": "Andrés Marafioti",
+     "slug": "andres-marafioti",
+     "url": "https://www.agenticdays.com/speaker/andres-marafioti",
+     "company": "Hugging Face",
+     "tagline": "Multimodal Research Lead · SmolVLM"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/35"
+  },
+  {
+   "id": "1269550",
+   "slug": "1269550-running-secure-agents-at-scale",
+   "title": "Running Secure Agents at Scale",
+   "url": "https://www.agenticdays.com/session/1269550-running-secure-agents-at-scale",
+   "format": "Lightning Talk",
+   "duration": "7 min",
+   "starts_at": "2026-11-20T12:36:00+01:00",
+   "ends_at": "2026-11-20T12:43:00+01:00",
+   "time": "Fri 20 Nov, 12:36-12:43",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Building secure and scalable agents at scale is hard. From multi-tenancy and noisy-neighbor risk to tool access and data boundaries, teams need more than a prompt and a container image—they need a deliberate execution model.\r\n\r\nAt Adobe, we are running agents on the CNCF Agent Sandbox project: a sandboxed runtime for AI agents that manages their full lifecycle—provision, execute, observe, and tear down—while keeping workloads isolated from the rest of the platform. Sandboxes enforce resource limits, reduce blast radius, and give operators a consistent place to apply policy.\r\nWe have applied optimizations so that development teams can run agents without the need to understand the sandboxing mechanism or worry much about the increased complexity of single tenant agent execution.\r\n\r\nIn this session we’ll share the problems we hit running agents for real customers, how Agent Sandbox addresses them, and what we’d do differently next time.",
+   "main_tools": "CNCF Agent Sandbox for Kubernetes",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Agent Frameworks",
+    "AI Security",
+    "AI   Community, Open Source & Education"
+   ],
+   "speakers": [
+    {
+     "name": "Alex Carol",
+     "slug": "alex-carol",
+     "url": "https://www.agenticdays.com/speaker/alex-carol",
+     "company": "Adobe",
+     "tagline": "Software Development Engineer"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/36"
+  },
+  {
+   "id": "1281529",
+   "slug": "1281529-securing-mcp-in-the-enterprise-oauth-token-exchange-and",
+   "title": "Securing MCP in the Enterprise: OAuth, Token Exchange, and Real-World CI/CD Integration",
+   "url": "https://www.agenticdays.com/session/1281529-securing-mcp-in-the-enterprise-oauth-token-exchange-and",
+   "format": "Lightning Talk",
+   "duration": "7 min",
+   "starts_at": "2026-11-20T12:44:00+01:00",
+   "ends_at": "2026-11-20T12:51:00+01:00",
+   "time": "Fri 20 Nov, 12:44-12:51",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "This talk shares a hands-on experience integrating the Model Context Protocol (MCP) into an enterprise CI/CD on-prem toolchain (SonarQube, Bitbucket, Jenkins, Backstage, OKD, YouTrack etc..) using a centralized identity provider (Keycloak).\r\n\r\nAt ELCA we built a remote MCP server (Quarkus) acting as a common layer between tools and agents, focusing on authentication and delegation flows rather than just connectivity. To enable end-to-end trust, we also developed extensions/plugins for Jenkins, Bitbucket, and SonarQube to validate and consume JWT Bearer tokens issued through these flows without the need of static API keys.\r\n\r\nThe session dives into practical usage of modern OAuth / OpenID Connect features in a multi-system environment: Client ID Metadata Documents (CIMD), token exchange (internal ↔ external), JWT bearer grants, and identity brokering. We’ll explain how agents securely access downstream services across trust boundaries.\r\n\r\nExpect concrete architecture, protocol flows and lessons learned when bringing MCP into an existing platform without rewriting everything.",
+   "main_tools": "Quarkus MCP / Keycloak",
+   "topics": [
+    "MCP & Agent Protocols"
+   ],
+   "speakers": [
+    {
+     "name": "Valentin Delaye",
+     "slug": "valentin-delaye",
+     "url": "https://www.agenticdays.com/speaker/valentin-delaye",
+     "company": "ELCA",
+     "tagline": "Platform Engineer · Jenkins Governance Board"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/37"
+  },
+  {
+   "id": "1322247",
+   "slug": "1322247-specs-first-code-later-or-how-i-build-software-in-the-ai",
+   "title": "Specs first, code later (or how I build software in the AI-DLC era)",
+   "url": "https://www.agenticdays.com/session/1322247-specs-first-code-later-or-how-i-build-software-in-the-ai",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:40:00+01:00",
+   "ends_at": "2026-11-20T12:10:00+01:00",
+   "time": "Fri 20 Nov, 11:40-12:10",
+   "room": "Studio 4",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "AWS",
+    "url": "https://aws.amazon.com/"
+   },
+   "description": "As AI-driven software development became part of our lives, writing specs before touching anything code-related became the natural thing to do. A structured specification captures what the system should do, how it should behave at the edges, and what \"done\" looks like. Then AI takes it from there. The workflow behind this is AI-DLC, a three-phase lifecycle: Inception (AI proposes the architecture), Construction (AI generates and iterates on code from your spec), and Operations (AI monitors and patches). Developers steer at each gate, but AI does the building. In this session I'll walk through a real project built this way, show where a good spec caught bugs that tests missed, and demonstrate when rewriting your spec becomes faster than fixing the code. You'll leave with best practices for writing specs, practical rules to follow, and a workflow you can try on your next feature.",
+   "speakers": [
+    {
+     "name": "Alessandra Pasini",
+     "slug": "alessandra-pasini",
+     "url": "https://www.agenticdays.com/speaker/alessandra-pasini",
+     "company": "AWS",
+     "tagline": "Solutions Architect"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/38"
+  },
+  {
+   "id": "1267144",
+   "slug": "1267144-the-agentic-lab-factory-how-i-stopped-writing-labs-and",
+   "title": "The Agentic Lab Factory: How I Stopped Writing Labs and Started Reviewing Them",
+   "url": "https://www.agenticdays.com/session/1267144-the-agentic-lab-factory-how-i-stopped-writing-labs-and",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T09:20:00+01:00",
+   "ends_at": "2026-11-20T09:50:00+01:00",
+   "time": "Fri 20 Nov, 09:20-09:50",
+   "room": "Studio 6",
+   "spotlight": false,
+   "description": "For years, getting new contributor SMEs to write labs was an uphill battle. The learning curve was too steep, the standards too specific, and the creation cost too high. What would it take to change that equation with AI?\r\n\r\nThis is the story of how I built an agentic lab creation pipeline using Claude: starting by analyzing 40 existing labs to make tacit knowledge explicit, generating our own style guidelines, and feeding those back as the generative substrate. The result is a loop that implements, tests, scores pedagogy, and incorporates reviewer feedback autonomously, only stopping when every gate passes.\r\n\r\nThe key insight: AI is a catalyst, not a creator. It amplified what was already good, our labs, our standards, our criteria. Without that foundation, the output would have been slop. With it, the bottleneck dissolved.\r\n\r\nNew contributors who previously found the learning curve too steep can now prompt their copilot agent of choice and produce a lab that meets our standards, complete with pregenerated Credly badge templates. You'll leave with a framework for thinking about agentic workflows in terms of deterministic vs. non-deterministic gates, and a concrete example of what happens when the loop mostly runs itself.",
+   "main_tools": "Copilot, Claude, GitHub, Instruqt",
+   "topics": [
+    "AI Evals & Testing",
+    "AI-Assisted Coding Practice"
+   ],
+   "speakers": [
+    {
+     "name": "Raphaël Pinson",
+     "slug": "raphael-pinson",
+     "url": "https://www.agenticdays.com/speaker/raphael-pinson",
+     "company": "Isovalent",
+     "tagline": "Cilium Alchemist · CNCF Ambassador · eBPF & Kubernetes"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/39"
+  },
+  {
+   "id": "1283743",
+   "slug": "1283743-the-next-frontier-agentic-collaborative-environments",
+   "title": "The next frontier - agentic collaborative environments.",
+   "url": "https://www.agenticdays.com/session/1283743-the-next-frontier-agentic-collaborative-environments",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:40:00+01:00",
+   "ends_at": "2026-11-20T14:10:00+01:00",
+   "time": "Fri 20 Nov, 13:40-14:10",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "AI-agentic developer tools like Claude Code or GitHub Copilot CLI have emerged as a primary way to develop software over the last few months. However, agentic engineering has been a solo story so far - one developer with a dozen agents, moving forward at warp speed. But coding without thoughtful planning, understanding of the problems, and team alignment is just a waste of time and tokens. When everyone on a team is directing agents alone in their personal CLI tools with no shared context, you get duplicate work, conflicting changes, poorly-designed solutions, surprise features nobody else agreed to build, and everyone pulling in different directions. \r\n\r\nAt the same time, serious software development is a collaborative problem-solving - you need multiple perspectives, types of expertise and various backgrounds to build great things together. We need agentic environments that enable this, where people can plan together and share the same context with AI agents driven by the team, rather than by individual developers.\r\n\r\nIn this talk, I'll demo how we've addressed these design challenges in Ace, a multiplayer agent environment from GitHub Next that enables real-time collaboration, proactive agents, and sandboxed micro VMs for rapid prototyping and exploration, fostering a more engaging teamwork experience.",
+   "topics": [
+    "AI Product    UX & Human-Agent Collaboration"
+   ],
+   "speakers": [
+    {
+     "name": "Krzysztof Cieślak",
+     "slug": "krzysztof-cieslak",
+     "url": "https://www.agenticdays.com/speaker/krzysztof-cieslak",
+     "company": "GitHub Next",
+     "tagline": "Developer Tools Researcher · Copilot co-creator · Ionide"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/40"
+  },
+  {
+   "id": "1317570",
+   "slug": "1317570-tie-a-metric-to-every-release",
+   "title": "Tie a Metric to Every Release",
+   "url": "https://www.agenticdays.com/session/1317570-tie-a-metric-to-every-release",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:00:00+01:00",
+   "ends_at": "2026-11-20T11:30:00+01:00",
+   "time": "Fri 20 Nov, 11:00-11:30",
+   "room": "Studio 6",
+   "spotlight": true,
+   "spotlight_by": {
+    "name": "Flagsmith",
+    "url": "https://www.flagsmith.com/"
+   },
+   "description": "AI writes more of our code every week, which means we ship a lot more than we used to. But we don't fly blind: every release goes out behind a flag, tied to a metric that tells us whether to continue the rollout or take a step back. I'll do it live: ship a feature to prod, roll it out to a slice of traffic, watch the metric move, and decide on the spot. No redeploy, no rollback pipeline. This is how we run Flagsmith on Flagsmith, and it's how our customers ship their code: behind a flag, against a metric. Faster releases, fewer surprises.",
+   "main_tools": "Flagsmith",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Observability & Production",
+    "AI Coding Tools"
+   ],
+   "speakers": [
+    {
+     "name": "Matt Elwell",
+     "slug": "matt-elwell",
+     "url": "https://www.agenticdays.com/speaker/matt-elwell",
+     "company": "Flagsmith",
+     "tagline": "Co-Founder & CTO"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/41"
+  },
+  {
+   "id": "1305182",
+   "slug": "1305182-watching-agents-for-trouble",
+   "title": "Watching Agents for Trouble",
+   "url": "https://www.agenticdays.com/session/1305182-watching-agents-for-trouble",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:40:00+01:00",
+   "ends_at": "2026-11-20T14:10:00+01:00",
+   "time": "Fri 20 Nov, 13:40-14:10",
+   "room": "Studio 4",
+   "spotlight": false,
+   "description": "Once an agent can touch a database, send email, or deploy something, the interesting question shifts from \"is the answer good\" to \"how much damage can it do, and would anyone notice.\" And the damage often isn't one forbidden step. It's a few allowed ones that add up.\r\n\r\nThis talk is about the practices that catch it. The core one is boring on purpose: mark every moment an agent crosses a line, like reading something untrusted, handing off to another agent, or doing something with real permissions. Write those moments down as plain facts and carry them through every hop. Once they're facts, traces turn into something you can actually search. An attack like \"read a poisoned input, then leak data\" stops being a scary string to hunt for and becomes \"this happened, then that happened.\"\r\n\r\nThe reassuring takeaway: little of this is new. Most of it is engineering discipline we already have, a lot of it falls straight out of ordinary Go best practices, and it's no accident memory-safe languages are becoming the default choice for building agents.",
+   "topics": [
+    "Multi-Agent Architectures",
+    "AI Observability & Production",
+    "AI Security"
+   ],
+   "speakers": [
+    {
+     "name": "Natalie Pistunovich",
+     "slug": "natalie-pistunovich",
+     "url": "https://www.agenticdays.com/speaker/natalie-pistunovich",
+     "company": "JFrog",
+     "tagline": "Developer Advocate · Google Developer Expert for Go"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/42"
+  },
+  {
+   "id": "1290786",
+   "slug": "1290786-we-rolled-out-github-copilot-how-do-we-prove-it-helps",
+   "title": "We Rolled Out GitHub Copilot… How Do We Prove It Helps?",
+   "url": "https://www.agenticdays.com/session/1290786-we-rolled-out-github-copilot-how-do-we-prove-it-helps",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T13:00:00+01:00",
+   "ends_at": "2026-11-20T13:30:00+01:00",
+   "time": "Fri 20 Nov, 13:00-13:30",
+   "room": "Studio 6",
+   "spotlight": false,
+   "description": "AI-assisted development tools like GitHub Copilot are being adopted quickly. Many organizations have already rolled them out - or are seriously considering doing so. Adoption often looks promising: licenses are paid for, developers are using the tool, and usage metrics look encouraging.\r\n\r\nAnd then the inevitable question comes up: how do we prove this actually helps?\r\n\r\nThis is not a new problem. Every major shift in how we build software - Agile, DevOps, CI/CD - has raised similar questions about productivity and effectiveness. AI-assisted development is simply the latest change in how work gets done, not a completely new measurement challenge.\r\n\r\nIn this talk, we’ll explore different ways to reason about the impact of GenAI assistants across the Software Development Life Cycle (SDLC), drawing on existing measurement approaches such as DORA and the SPACE framework, and examining how Copilot’s tool-level metrics can add context.\r\n\r\nRather than focusing on generated lines of code, we’ll show how Copilot metrics can be used to understand adoption and improve enablement - when interpreted correctly.\r\n\r\nThis session is for software architects, engineering leaders and senior developers who want to actively improve the adoption of AI-assisted development and apply a structured framework to measure its impact across the SDLC.",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Coding Tools",
+    "Enterprise AI Adoption & Governance",
+    "AI Strategy & Value Realization"
+   ],
+   "speakers": [
+    {
+     "name": "Yuliya Khadasevich",
+     "slug": "yuliya-khadasevich",
+     "url": "https://www.agenticdays.com/speaker/yuliya-khadasevich",
+     "company": "Eneco",
+     "tagline": "Engineering Manager · Microsoft MVP"
+    },
+    {
+     "name": "Liuba Gonta",
+     "slug": "liuba-gonta",
+     "url": "https://www.agenticdays.com/speaker/liuba-gonta",
+     "company": "Xebia",
+     "tagline": "IT Consultant · GitHub Trainer · Microsoft MCT"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/43"
+  },
+  {
+   "id": "1310498",
+   "slug": "1310498-welcome-session",
+   "title": "Welcome Session",
+   "url": "https://www.agenticdays.com/session/1310498-welcome-session",
+   "format": "Lightning Talk",
+   "duration": "7 min",
+   "starts_at": "2026-11-20T08:30:00+01:00",
+   "ends_at": "2026-11-20T08:45:00+01:00",
+   "time": "Fri 20 Nov, 08:30-08:45",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "Doors open, coffee's poured — let's kick things off. Join Barbara and Jonas Felix, co-founders of letsboot, as they welcome you to Agentic Engineering Days Zurich 2026, set the stage for two days of hands-on agentic engineering, and share a few practical tips for getting the most out of the sessions, hallway conversations, and hands-on labs ahead.",
+   "speakers": [
+    {
+     "name": "Jonas Felix",
+     "slug": "jonas-felix",
+     "url": "https://www.agenticdays.com/speaker/jonas-felix",
+     "company": "Co-Founder Agentic Days / letsboot.ch",
+     "tagline": "Trainer"
+    },
+    {
+     "name": "Barbara Felix",
+     "slug": "barbara-felix",
+     "url": "https://www.agenticdays.com/speaker/barbara-felix",
+     "company": "Co-Founder Agentic Days / letsboot.ch",
+     "tagline": "CEO"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/qna/1310498"
+  },
+  {
+   "id": "1287383",
+   "slug": "1287383-when-software-stops-being-deterministic-rethinking",
+   "title": "When Software Stops Being Deterministic: Rethinking Engineering Practices for AI-Native Systems",
+   "url": "https://www.agenticdays.com/session/1287383-when-software-stops-being-deterministic-rethinking",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T14:20:00+01:00",
+   "ends_at": "2026-11-20T14:50:00+01:00",
+   "time": "Fri 20 Nov, 14:20-14:50",
+   "room": "Millennium",
+   "spotlight": false,
+   "description": "For decades, we've built software around a simple assumption: the same input produces the same output. If behavior changes, we can usually trace it back to a code change. We write tests, review diffs, deploy to staging, and rely on CI because software is fundamentally deterministic.\r\n\r\nLLM systems break that assumption.\r\n\r\nAs you build with language models, behavior increasingly emerges from the interaction between prompts, retrieval, context, model choice, and evaluation—not just the application code itself. Features can regress without a single line of business logic changing. A prompt tweak fixes one failure mode while introducing another. The engineering instincts that served us well for years don't disappear, but many of them stop being sufficient.\r\n\r\nThis talk is about what that transition has actually looked like while building agentic systems at Typeform.\r\n\r\nRather than presenting a polished architecture or a success story, I'll walk through real features we're building today - including the trade-offs, dead ends, and problems we still haven't solved. Each example highlights an engineering habit I had to rethink.\r\n\r\nI'll cover four practices that have become essential: continuous evaluation instead of relying on traditional test suites, trace-level observability instead of application logs alone, reviewing prompts and other AI artifacts as first-class engineering assets, and orchestrating systems whose components are inherently non-deterministic.\r\n\r\nThe goal isn't to convince you that AI changes everything. It's to show which engineering principles still hold, which ones need to evolve, and the practical patterns we've found useful along the way.\r\n\r\nIf you're already building LLM applications - or are about to start-this talk aims to save you from having to unlearn some of those lessons the hard way.",
+   "main_tools": "LangChain, agentCore, Claude Code",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "Multi-Agent Architectures",
+    "AI Evals & Testing",
+    "AI Observability & Production"
+   ],
+   "speakers": [
+    {
+     "name": "Susanna Wong",
+     "slug": "susanna-wong",
+     "url": "https://www.agenticdays.com/speaker/susanna-wong",
+     "company": "Typeform",
+     "tagline": "Staff Engineer · Google Developer Expert"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/44"
+  },
+  {
+   "id": "1303929",
+   "slug": "1303929-you-can-t-ctrl-z-a-robot-coding-agents-in-embedded-systems",
+   "title": "You Can't Ctrl-Z a Robot: Coding Agents in Embedded Systems",
+   "url": "https://www.agenticdays.com/session/1303929-you-can-t-ctrl-z-a-robot-coding-agents-in-embedded-systems",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T11:40:00+01:00",
+   "ends_at": "2026-11-20T12:10:00+01:00",
+   "time": "Fri 20 Nov, 11:40-12:10",
+   "room": "Studio 6",
+   "spotlight": false,
+   "description": "Coding agents work well in the terminal because feedback there costs nothing. Compiler errors, failing tests, stack traces, all of it arrives instantly and in writing, and the agent reads the message and tries again. As soon as code has to move something in the physical world, that stops working. Reality writes no error messages, and it has never had an undo.\r\n\r\nEmbedded engineers dealt with this long before anyone talked about agents. They build simulators to fail in, they measure what actually happened instead of what was intended, and no change reaches the hardware without proof. We put a coding agent into that same loop and look at where it earns autonomy, where it has to be stopped, and why teams whose code never touches hardware run into the same problem with every irreversible action they automate.",
+   "main_tools": "Renode, Claude Code",
+   "topics": [
+    "Lessons Learned & Anti-Patterns",
+    "AI Evals & Testing",
+    "AI-Assisted Coding Practice"
+   ],
+   "speakers": [
+    {
+     "name": "Syrian Hadad",
+     "slug": "syrian-hadad",
+     "url": "https://www.agenticdays.com/speaker/syrian-hadad",
+     "company": "adesso Schweiz",
+     "tagline": "CTO · Lecturer BFH"
+    },
+    {
+     "name": "Alexander Büchel",
+     "slug": "alexander-buechel",
+     "url": "https://www.agenticdays.com/speaker/alexander-buechel",
+     "company": "adesso Schweiz",
+     "tagline": "Team Lead, Embedded Software Engineering"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/45"
+  },
+  {
+   "id": "1256564",
+   "slug": "1256564-your-biggest-new-customer-can-t-see-pixels",
+   "title": "Your Biggest New Customer Can't See Pixels",
+   "url": "https://www.agenticdays.com/session/1256564-your-biggest-new-customer-can-t-see-pixels",
+   "format": "Talk",
+   "duration": "25 min",
+   "starts_at": "2026-11-20T14:20:00+01:00",
+   "ends_at": "2026-11-20T14:50:00+01:00",
+   "time": "Fri 20 Nov, 14:20-14:50",
+   "room": "Studio 3 AB",
+   "spotlight": false,
+   "description": "For decades we've argued that accessibility is the right thing to do. The argument just got a lot easier, because your next customer probably isn't human.\r\n\r\nWhether you like it or not AI agents from are now browsing, comparing, and interacting on behalf of users. And here's the twist: they consume your site through the exact same accessibility tree screen readers do. Semantic HTML, proper labels, ARIA states, keyboard support, the same patterns that serve disabled users determine whether an agent can efficiently complete a checkout, fill a form, or even find your product.\r\n\r\nIn this talk we'll look at how agents actually use the web, where they fail (and why those failures map to WCAG violations), and what web development teams should do today. If you've been waiting for a business case for accessibility that lands with execs, this is it.",
+   "topics": [
+    "AI Product    UX & Human-Agent Collaboration",
+    "AI Ethics & Responsibility"
+   ],
+   "speakers": [
+    {
+     "name": "Tim Damen",
+     "slug": "tim-damen",
+     "url": "https://www.agenticdays.com/speaker/tim-damen",
+     "company": "ABN AMRO",
+     "tagline": "Head of Frontend Platforms & Accessibility Lead"
+    }
+   ],
+   "qna_url": "https://www.agenticdays.com/q/46"
+  }
+ ]
+}

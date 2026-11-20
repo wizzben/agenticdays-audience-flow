@@ -1,0 +1,5 @@
+.data-worktree/
+.claude/
+.gstack/
+node_modules/
+.DS_Store

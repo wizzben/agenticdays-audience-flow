@@ -1,0 +1,97 @@
+<svg viewBox="115 560 1290 668" role="img" aria-labelledby="vb-title" class="vb">
+        <title id="vb-title">The Agentic Village: sponsors &amp; partners in Century and Hub 2 on the 2nd floor of the Zurich Marriott Hotel</title>
+        <defs>
+          <marker id="vb-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#fff"/></marker>
+        </defs>
+        <path class="vm-slab" d="M233 790L233 803L275 825L268 856L506 983L587 949L603 949L638 968L638 993L688 1020L713 1019L738 1033L827 1004L926 1057L1228 1102L1320 957L1320 942L1094 821L1002 806L1001 792L992 793L994 815L968 812L965 819L933 822L912 813L909 822L880 822L837 798L811 798L786 783L732 798L464 749L424 753L339 737L256 769L251 781Z"/>
+        <path class="vm-esc" d="M1077 713L1100 719L1010 819L987 813Z"/>
+        <path class="vm-room vm-k-talks" d="M1271 1015L1253 1008L1264 986L1087 891L923 963L898 952L826 985L833 992L928 1042L1222 1087L1231 1080Z"/><path class="vm-room vm-k-foyer vb-floor" d="M239 788L437 896L455 891L605 823L600 817L518 774L345 743L336 744Z"/><path class="vm-room vm-k-foyer vb-floor" d="M527 890L595 929L604 927L602 933L661 964L689 953L698 953L702 960L670 974L668 978L735 1014L744 1011L750 1015L799 993L800 984L808 989L816 981L884 951L879 945L808 908L800 908L751 931L744 931L581 842L572 842L544 856L579 880L571 884L556 877Z"/>
+        <path class="vm-route" d="M1507 456L1470 410L1404 440L1388 556L1344 602L1168 684L1086 706L1000 814L930 872L850 952" marker-end="url(#vb-arrow)"/>
+        <text class="vb-room" x="1090" y="968" text-anchor="middle">Millennium</text>
+        <text class="vb-room-sub" x="1090" y="996" text-anchor="middle">Main stage</text>
+        <text class="vb-room" x="352" y="945" text-anchor="middle">Century</text>
+        <text class="vb-room" x="560" y="985" text-anchor="end">Hub 2</text>
+        
+        <g class="vb-way">
+          <path class="vb-way-up" d="M1120 742v-34m-12 12l12-12l12 12"/>
+          <text class="vb-way-h" x="1144" y="740">Up the escalator</text>
+          <text class="vb-room-sub" x="1144" y="772">Studios 4, 6, 8</text>
+          <text class="vb-room-sub" x="1144" y="800">Hub 4 · Cloakroom</text>
+          <text class="vb-room-sub" x="1144" y="828">Studio 3 (ground floor)</text>
+          <path class="vb-way-down" d="M1120 852v34m-12 -12l12 12l12 -12"/>
+          <text class="vb-way-h vb-way-g" x="1144" y="884">Stairs down</text>
+          <text class="vb-room-sub" x="1144" y="914">Studio 1 · Hands-On</text>
+        </g>
+        <circle class="vb-stairs" cx="912" cy="930" r="11"/><path class="vb-way-down vb-thin" d="M912 930m0 14v26m-9 -9l9 9l9 -9"/>
+        <circle class="vm-spot vm-k-welcome" cx="850" cy="952" r="22"/><text class="vb-pin-t" x="850" y="960">W</text>
+        <line class="vb-leader" x1="768" y1="988" x2="1227" y2="1130"/><line class="vb-leader" x1="615" y1="900" x2="692" y2="1130"/><line class="vb-leader" x1="678" y1="946" x2="933" y2="1130"/><line class="vb-leader" x1="556" y1="876" x2="451" y2="1130"/><line class="vb-leader" x1="446" y1="872" x2="222" y2="1130"/><line class="vb-leader" x1="402" y1="838" x2="222" y2="995"/><line class="vb-leader" x1="462" y1="792" x2="699" y2="650"/><line class="vb-leader" x1="548" y1="808" x2="911" y2="650"/><line class="vb-leader" x1="390" y1="778" x2="462" y2="650"/><line class="vb-leader" x1="318" y1="782" x2="225" y2="650"/><line class="vb-leader" x1="500" y1="842" x2="222" y2="860"/>
+        
+        <g class="vb-card vb-l-platinum">
+          <rect class="vb-plate" x="1062" y="1040" width="330" height="180" rx="14"/>
+          <image href="/sponsors/copebit.webp" x="1114" y="1074" width="226" height="112" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="1064" cy="1042" r="17"/><text class="vb-num-t" x="1064" y="1042" dy="7">1</text>
+        </g>
+        
+        <g class="vb-card vb-l-gold">
+          <rect class="vb-plate" x="577" y="1071" width="230" height="118" rx="14"/>
+          <image href="/sponsors/aws.svg" x="607" y="1093" width="170" height="74" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="579" cy="1073" r="17"/><text class="vb-num-t" x="579" y="1073" dy="7">2</text>
+        </g>
+        
+        <g class="vb-card vb-l-gold">
+          <rect class="vb-plate" x="818" y="1071" width="230" height="118" rx="14"/>
+          <image href="/sponsors/tdsynnex.webp" x="848" y="1093" width="170" height="74" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="820" cy="1073" r="17"/><text class="vb-num-t" x="820" y="1073" dy="7">3</text>
+        </g>
+        
+        <g class="vb-card vb-l-gold">
+          <rect class="vb-plate" x="336" y="1071" width="230" height="118" rx="14"/>
+          <image href="/sponsors/exasol.svg" x="366" y="1093" width="170" height="74" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="338" cy="1073" r="17"/><text class="vb-num-t" x="338" y="1073" dy="7">4</text>
+        </g>
+        
+        <g class="vb-card vb-l-silver">
+          <rect class="vb-plate" x="120" y="1082" width="205" height="96" rx="14"/>
+          <image href="/sponsors/recinq.webp" x="148" y="1100" width="149" height="60" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="122" cy="1084" r="17"/><text class="vb-num-t" x="122" y="1084" dy="7">5</text>
+        </g>
+        
+        <g class="vb-card vb-l-silver">
+          <rect class="vb-plate" x="120" y="947" width="205" height="96" rx="14"/>
+          <image href="/sponsors/flagsmith.webp" x="148" y="965" width="149" height="60" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="122" cy="949" r="17"/><text class="vb-num-t" x="122" y="949" dy="7">6</text>
+        </g>
+        
+        <g class="vb-card vb-l-bronze">
+          <rect class="vb-plate" x="599" y="606" width="200" height="88" rx="14"/>
+          <image href="/sponsors/noser.webp" x="623" y="622" width="152" height="56" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="601" cy="608" r="17"/><text class="vb-num-t" x="601" y="608" dy="7">7</text>
+        </g>
+        
+        <g class="vb-card vb-l-bronze">
+          <rect class="vb-plate" x="811" y="606" width="200" height="88" rx="14"/>
+          <image href="/sponsors/keera.svg" x="835" y="622" width="152" height="56" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="813" cy="608" r="17"/><text class="vb-num-t" x="813" y="608" dy="7">8</text>
+        </g>
+        
+        <g class="vb-card vb-l-partner">
+          <rect class="vb-plate" x="337" y="606" width="250" height="88" rx="14"/>
+          <image href="/sponsors/fhnw-hsi.svg" x="361" y="622" width="202" height="56" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="339" cy="608" r="17"/><text class="vb-num-t" x="339" y="608" dy="7">9</text>
+        </g>
+        
+        <g class="vb-card vb-l-partner">
+          <rect class="vb-plate" x="125" y="606" width="200" height="88" rx="14"/>
+          <image href="/logos/letsboot.ch-logo-tight.svg" x="149" y="622" width="152" height="56" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="127" cy="608" r="17"/><text class="vb-num-t" x="127" y="608" dy="7">10</text>
+        </g>
+        
+        <g class="vb-card vb-l-silver">
+          <rect class="vb-plate" x="120" y="812" width="205" height="96" rx="14"/>
+          <image href="/sponsors/logicstar.svg" x="148" y="830" width="149" height="60" preserveAspectRatio="xMidYMid meet"/>
+          <circle class="vb-num" cx="122" cy="814" r="17"/><text class="vb-num-t" x="122" y="814" dy="7">11</text>
+        </g>
+        
+        <g class="vb-extra"><circle cx="262" cy="792" r="22"/><path transform="translate(245 775) scale(1.4)" d="M10 2v2m4-2v2m2 4a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1M6 2v2"/></g><text class="vb-room-sub" x="232" y="800" text-anchor="end">Barista</text><g class="vb-extra"><circle cx="352" cy="828" r="22"/><path transform="translate(335 811) scale(1.4)" d="M6 11h4M8 9v4M15 12h.01M18 10h.01M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></g><text class="vb-room-sub" x="322" y="836" text-anchor="end">Arcade</text>
+        <g class="vb-booth vb-l-platinum"><circle cx="768" cy="988" r="31"/><text x="768" y="999" font-size="31">1</text></g><g class="vb-booth vb-l-gold"><circle cx="615" cy="900" r="22"/><text x="615" y="908" font-size="22">2</text></g><g class="vb-booth vb-l-gold"><circle cx="678" cy="946" r="22"/><text x="678" y="954" font-size="22">3</text></g><g class="vb-booth vb-l-gold"><circle cx="556" cy="876" r="22"/><text x="556" y="884" font-size="22">4</text></g><g class="vb-booth vb-l-silver"><circle cx="446" cy="872" r="18"/><text x="446" y="878" font-size="18">5</text></g><g class="vb-booth vb-l-silver"><circle cx="402" cy="838" r="18"/><text x="402" y="844" font-size="18">6</text></g><g class="vb-booth vb-l-bronze"><circle cx="462" cy="792" r="18"/><text x="462" y="798" font-size="18">7</text></g><g class="vb-booth vb-l-bronze"><circle cx="548" cy="808" r="18"/><text x="548" y="814" font-size="18">8</text></g><g class="vb-booth vb-l-partner"><circle cx="390" cy="778" r="18"/><text x="390" y="784" font-size="18">9</text></g><g class="vb-booth vb-l-partner"><circle cx="318" cy="782" r="22"/><text x="318" y="790" font-size="22">10</text></g><g class="vb-booth vb-l-silver"><circle cx="500" cy="842" r="18"/><text x="500" y="848" font-size="18">11</text></g>
+      </svg>

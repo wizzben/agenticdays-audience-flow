@@ -1,0 +1,617 @@
+{
+ "now": 1795174004633,
+ "rooms": [
+  {
+   "id": "millennium",
+   "name": "Millennium",
+   "code": "M",
+   "north": false,
+   "where": "Main building",
+   "level": "open",
+   "label": "Open",
+   "target": "1243898",
+   "sessions": [
+    {
+     "id": "1310498",
+     "title": "Welcome Session",
+     "start": 1795159800000,
+     "end": 1795160700000,
+     "speakers": [
+      {
+       "name": "Jonas Felix",
+       "photo": "https://cdn.sessionize.com/image/5371-400o400o1-RbuPuYAvyTLvsu11vwLSvt.jpg"
+      },
+      {
+       "name": "Barbara Felix",
+       "photo": "https://cdn.sessionize.com/image/57b1-400o400o1-4UJTaGeCNyeScy8VSsAkwC.png"
+      }
+     ]
+    },
+    {
+     "id": "1286069",
+     "title": "Reachy mini: Giving a body to AI",
+     "start": 1795160700000,
+     "end": 1795162200000,
+     "speakers": [
+      {
+       "name": "Andrés Marafioti",
+       "photo": "https://cdn.sessionize.com/image/9119-400o400o1-4fxJR6gK17dipHKDfbVRrs.png"
+      }
+     ]
+    },
+    {
+     "id": "1312296",
+     "title": "Millions of exceptions a day: getting Bedrock and AgentCore right",
+     "start": 1795162800000,
+     "end": 1795164600000,
+     "speakers": [
+      {
+       "name": "Marco Kuendig",
+       "photo": "https://cdn.sessionize.com/image/cb96-400o400o1-M1649nKtE6zbuzpqYarK7N.jpg"
+      },
+      {
+       "name": "Davide Walder",
+       "photo": "https://cdn.sessionize.com/image/f744-400o400o1-abq3cgLgoV4GQLiJ3e43ZQ.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1292484",
+     "title": "Beyond Prompts & Models: Evolving Architecture for Agentic Systems",
+     "start": 1795166400000,
+     "end": 1795168200000,
+     "speakers": [
+      {
+       "name": "Manisha De",
+       "photo": "https://cdn.sessionize.com/image/6d65-400o400o1-JNSh42JoqKw7hXNV4HFbsm.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1292080",
+     "title": "Agents Speak Protocol: Why Standards Are the Real Infrastructure of AI",
+     "start": 1795168800000,
+     "end": 1795170600000,
+     "speakers": [
+      {
+       "name": "Stefano Maestri",
+       "photo": "https://cdn.sessionize.com/image/fd4e-400o400o1-Sq83itJbaVD8z441U3SvPW.jpg"
+      },
+      {
+       "name": "Alessio Soldano",
+       "photo": "https://cdn.sessionize.com/image/2e27-400o400o1-33ceGCg6epEv3MKUHx3Xf4.png"
+      }
+     ]
+    },
+    {
+     "id": "1305345",
+     "title": "NOOA: Inside NVIDIA's Object-Oriented Agent Harness",
+     "start": 1795171200000,
+     "end": 1795173000000,
+     "speakers": [
+      {
+       "name": "Matt Staats",
+       "photo": "https://cdn.sessionize.com/image/9c74-400o400o1-fZJ6UoAaxfGhNkgAxAt9gD.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1243898",
+     "title": "A Practical Guide to Fast and Private LLMs",
+     "start": 1795173600000,
+     "end": 1795174020000,
+     "speakers": [
+      {
+       "name": "Lena Fuhrimann",
+       "photo": "https://cdn.sessionize.com/image/743f-400o400o1-DUr1fbuiqYKJGGM5CFQfGv.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1274697",
+     "title": "From a RAG Demo to a RAG System",
+     "start": 1795174080000,
+     "end": 1795174500000,
+     "speakers": [
+      {
+       "name": "Richa Dinesh Tamhane",
+       "photo": "https://cdn.sessionize.com/image/372d-400o400o1-fAxuiKqB7QcMEr5qTEbHTt.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1269550",
+     "title": "Running Secure Agents at Scale",
+     "start": 1795174560000,
+     "end": 1795174980000,
+     "speakers": [
+      {
+       "name": "Alex Carol",
+       "photo": "https://cdn.sessionize.com/image/b413-400o400o1-JLjb7QMRgbk4yXqoUgj3vY.png"
+      }
+     ]
+    },
+    {
+     "id": "1281529",
+     "title": "Securing MCP in the Enterprise: OAuth, Token Exchange, and Real-World CI/CD Integration",
+     "start": 1795175040000,
+     "end": 1795175460000,
+     "speakers": [
+      {
+       "name": "Valentin Delaye",
+       "photo": "https://cdn.sessionize.com/image/190a-400o400o1-JiPFb9vgbP3zEBMh9nUTg8.png"
+      }
+     ]
+    },
+    {
+     "id": "1254403",
+     "title": "AI & Agility: Is Spec-Driven Development Bringing Back Waterfall? And How to Move Beyond It",
+     "start": 1795176000000,
+     "end": 1795177800000,
+     "speakers": [
+      {
+       "name": "Baptiste Macé",
+       "photo": "https://cdn.sessionize.com/image/1d42-400o400o1-9J1yLAoN89zS5KvLcu6i2T.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1283743",
+     "title": "The next frontier - agentic collaborative environments.",
+     "start": 1795178400000,
+     "end": 1795180200000,
+     "speakers": [
+      {
+       "name": "Krzysztof Cieślak",
+       "photo": "https://cdn.sessionize.com/image/9fda-400o400o1-JmfPoDrFamG4jFbdHqbXx9.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1287383",
+     "title": "When Software Stops Being Deterministic: Rethinking Engineering Practices for AI-Native Systems",
+     "start": 1795180800000,
+     "end": 1795182600000,
+     "speakers": [
+      {
+       "name": "Susanna Wong",
+       "photo": "https://cdn.sessionize.com/image/c112-400o400o1-fEYQnyQupA5mLRNBzt1W5E.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1252760",
+     "title": "Build your own Coding Agent",
+     "start": 1795184400000,
+     "end": 1795186200000,
+     "speakers": [
+      {
+       "name": "Max Gfeller",
+       "photo": "https://cdn.sessionize.com/image/c5ec-400o400o1-BidAZDZR7ny3P3EL1ADXXc.jpeg"
+      }
+     ]
+    },
+    {
+     "id": "1282535",
+     "title": "Human-in-the-Loop Is You: A Guide to Working With Multiple Coding Agents",
+     "start": 1795186800000,
+     "end": 1795188600000,
+     "speakers": [
+      {
+       "name": "Oleksandra Bovkun",
+       "photo": "https://cdn.sessionize.com/image/1e55-400o400o1-NutM129M1kPMPdchhZyj6V.jpg"
+      }
+     ]
+    },
+    {
+     "id": "ba842335-efb9-4828-a584-4a4d0a65c713",
+     "title": "Closing Remarks",
+     "start": 1795188600000,
+     "end": 1795189500000,
+     "speakers": [
+      {
+       "name": "Jonas Felix",
+       "photo": "https://cdn.sessionize.com/image/5371-400o400o1-RbuPuYAvyTLvsu11vwLSvt.jpg"
+      },
+      {
+       "name": "Barbara Felix",
+       "photo": "https://cdn.sessionize.com/image/57b1-400o400o1-4UJTaGeCNyeScy8VSsAkwC.png"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "studio4",
+   "name": "Studio 4",
+   "code": "S4",
+   "north": true,
+   "where": "North building",
+   "level": "open",
+   "label": "Open",
+   "target": "1301641",
+   "sessions": [
+    {
+     "id": "1250380",
+     "title": "\"YOU MUST NOT ssh!\" and Other Stories from Building Our SRE Agent",
+     "start": 1795162800000,
+     "end": 1795164600000,
+     "speakers": [
+      {
+       "name": "David Pech",
+       "photo": "https://cdn.sessionize.com/image/c5f9-400o400o1-ME6AzPZVPufiHYCofMrixo.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1294885",
+     "title": "Deploying Agents at Scale: What Enterprise Adoption Actually Looks Like",
+     "start": 1795166400000,
+     "end": 1795168200000,
+     "speakers": [
+      {
+       "name": "Michael Rishi Forrester",
+       "photo": "https://cdn.sessionize.com/image/eebf-400o400o1-7fYPg813Gd3ZBX7YhSPw1o.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1286299",
+     "title": "Building Authorization for Agentic RAG Systems",
+     "start": 1795168800000,
+     "end": 1795170600000,
+     "speakers": [
+      {
+       "name": "Sohan Maheshwar",
+       "photo": "https://cdn.sessionize.com/image/12a8-400o400o1-fBwg9u7FU2ExRX2tME3Lbj.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1322247",
+     "title": "Specs first, code later (or how I build software in the AI-DLC era)",
+     "start": 1795171200000,
+     "end": 1795173000000,
+     "speakers": [
+      {
+       "name": "Alessandra Pasini",
+       "photo": "https://cdn.sessionize.com/image/de32-400o400o1-SuRB8CyoaLpyXRnbQGgLTg.png"
+      }
+     ]
+    },
+    {
+     "id": "1301641",
+     "title": "From Copilot to the Dark Factory",
+     "start": 1795176000000,
+     "end": 1795177800000,
+     "speakers": [
+      {
+       "name": "Pini Reznik",
+       "photo": "https://cdn.sessionize.com/image/5914-400o400o1-wfprQwAsCGXkXft1scTkiV.png"
+      }
+     ]
+    },
+    {
+     "id": "1305182",
+     "title": "Watching Agents for Trouble",
+     "start": 1795178400000,
+     "end": 1795180200000,
+     "speakers": [
+      {
+       "name": "Natalie Pistunovich",
+       "photo": "https://cdn.sessionize.com/image/9f95-400o400o1-p8tr53TjSW8XAJe9jRUeNF.png"
+      }
+     ]
+    },
+    {
+     "id": "1279518",
+     "title": "OCR at Swiss Post: The Case for Small Language Models",
+     "start": 1795180800000,
+     "end": 1795182600000,
+     "speakers": [
+      {
+       "name": "Huriel Reichel",
+       "photo": "https://cdn.sessionize.com/image/038e-400o400o1-Wb4j8AaGxhirRWtwSGP2GZ.png"
+      },
+      {
+       "name": "Oliver Hofmann",
+       "photo": "https://cdn.sessionize.com/image/aeaf-400o400o1-wJGYWx5nG3Ls4r12SEbb3Z.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1302471",
+     "title": "Agentic AI at Migros Online: Autonomous Engineering Agents and Conversational Shopping",
+     "start": 1795184400000,
+     "end": 1795186200000,
+     "speakers": [
+      {
+       "name": "Sven Scheffel",
+       "photo": "https://cdn.sessionize.com/image/85cb-400o400o1-HN8UKXDyaPPg9rsN2hV18S.jpg"
+      },
+      {
+       "name": "Gabriel Dinant",
+       "photo": "https://cdn.sessionize.com/image/dce8-400o400o1-MYRrHUWx4jg4yBQDeprCn1.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1385732",
+     "title": "How do you know your coding agent actually helps?",
+     "start": 1795186800000,
+     "end": 1795188600000,
+     "speakers": [
+      {
+       "name": "Boris Paskalev",
+       "photo": "https://cdn.sessionize.com/image/2adf-400o400o1-Y3E24HWhib8REpeKvw77Hw.png"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "studio6",
+   "name": "Studio 6",
+   "code": "S6",
+   "north": true,
+   "where": "North building",
+   "level": "open",
+   "label": "Open",
+   "target": "1290786",
+   "sessions": [
+    {
+     "id": "1267144",
+     "title": "The Agentic Lab Factory: How I Stopped Writing Labs and Started Reviewing Them",
+     "start": 1795162800000,
+     "end": 1795164600000,
+     "speakers": [
+      {
+       "name": "Raphaël Pinson",
+       "photo": "https://cdn.sessionize.com/image/da31-400o400o1-Hx9Pcv7XBB58S4SrhNAw9J.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1368894",
+     "title": "Beyond MCP - Supercharging your agents with a single unified data plane",
+     "start": 1795166400000,
+     "end": 1795168200000,
+     "speakers": [
+      {
+       "name": "Alexander Stigsen",
+       "photo": "https://cdn.sessionize.com/image/3db1-400o400o1-pz3k64159FiSgZv7YeDfVw.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1317570",
+     "title": "Tie a Metric to Every Release",
+     "start": 1795168800000,
+     "end": 1795170600000,
+     "speakers": [
+      {
+       "name": "Matt Elwell",
+       "photo": "https://cdn.sessionize.com/image/8ac9-400o400o1-LajoHKEHUL7yUQjZjfAR2m.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1303929",
+     "title": "You Can't Ctrl-Z a Robot: Coding Agents in Embedded Systems",
+     "start": 1795171200000,
+     "end": 1795173000000,
+     "speakers": [
+      {
+       "name": "Syrian Hadad",
+       "photo": "https://cdn.sessionize.com/image/3370-400o400o1-wZ8qRX26TfjjWAxdFKKRmw.png"
+      },
+      {
+       "name": "Alexander Büchel",
+       "photo": "https://cdn.sessionize.com/image/097f-400o400o1-VeGUqfE4tAPRvzye1Qc8Fo.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1290786",
+     "title": "We Rolled Out GitHub Copilot… How Do We Prove It Helps?",
+     "start": 1795176000000,
+     "end": 1795177800000,
+     "speakers": [
+      {
+       "name": "Yuliya Khadasevich",
+       "photo": "https://cdn.sessionize.com/image/2d13-400o400o1-9yhXLYygu1YFFZmNNP27v1.jpg"
+      },
+      {
+       "name": "Liuba Gonta",
+       "photo": "https://cdn.sessionize.com/image/1d71-400o400o1-XHose9eTrkUtb151z5b1bQ.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1243798",
+     "title": "Agents Need Platforms Too: Running LLM and Agent Workloads the Cloud-Native Way",
+     "start": 1795178400000,
+     "end": 1795180200000,
+     "speakers": [
+      {
+       "name": "Aarno Aukia",
+       "photo": "https://cdn.sessionize.com/image/0f21-400o400o1-Y4p8mCrtszCzsDxC8Zx13U.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1363422",
+     "title": "Open Agentic AI Without Lock-In: The IBM Approach with  watsonx Orchestrate",
+     "start": 1795180800000,
+     "end": 1795182600000,
+     "speakers": [
+      {
+       "name": "Domenic Largiadèr",
+       "photo": "https://cdn.sessionize.com/image/e18f-400o400o1-9XLCQc8i9FzrdhvzGdrHuA.png"
+      }
+     ]
+    },
+    {
+     "id": "1309668",
+     "title": "FSI Transformation at Scale: Sovereignty, Compliance & Production Realities",
+     "start": 1795184400000,
+     "end": 1795186200000,
+     "speakers": [
+      {
+       "name": "Sergiu Petean",
+       "photo": "https://cdn.sessionize.com/image/53d6-400o400o1-B9YhEyeEarPEWpFvzskaF9.png"
+      },
+      {
+       "name": "Baris Yorganci",
+       "photo": "https://cdn.sessionize.com/image/4cff-400o400o1-EPhaW3SXRCfgW7XRytky1g.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "studio3",
+   "name": "Studio 3",
+   "code": "S3",
+   "north": true,
+   "where": "North building · downstairs",
+   "level": "open",
+   "label": "Open",
+   "target": "1293601",
+   "sessions": [
+    {
+     "id": "1241628",
+     "title": "Migration or migraine: What no one tells you about using LLMs",
+     "start": 1795162800000,
+     "end": 1795164600000,
+     "speakers": [
+      {
+       "name": "Warren Parad",
+       "photo": "https://cdn.sessionize.com/image/afcb-400o400o1-scer25NZbfYcJwW5u2wrrF.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1305338",
+     "title": "Just Build — Orchestrating your Agents with Codex",
+     "start": 1795166400000,
+     "end": 1795172400000,
+     "speakers": [
+      {
+       "name": "Abbas Tutcuoglu",
+       "photo": "https://cdn.sessionize.com/image/bdb5-400o400o1-LqoKbBAZPciq69sYpCxDhA.jpg"
+      },
+      {
+       "name": "Jules Giroul",
+       "photo": "https://cdn.sessionize.com/image/89ce-400o400o1-SmCwPk4DfFPU8g6ymQbkB5.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1293601",
+     "title": "ADK Crash Course - From Beginner To Expert",
+     "start": 1795176000000,
+     "end": 1795180500000,
+     "speakers": [
+      {
+       "name": "Abdel Sghiouar",
+       "photo": "https://cdn.sessionize.com/image/bb77-400o400o1-RHWe7L8jdTrBS2o2ch6bQe.png"
+      }
+     ]
+    },
+    {
+     "id": "1256564",
+     "title": "Your Biggest New Customer Can't See Pixels",
+     "start": 1795180800000,
+     "end": 1795182600000,
+     "speakers": [
+      {
+       "name": "Tim Damen",
+       "photo": "https://cdn.sessionize.com/image/713a-400o400o1-G7uPPRP3fDCEZUWZRFKJck.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1305346",
+     "title": "Can We Trust Autonomous Agents? (Panel Discussion)",
+     "start": 1795184400000,
+     "end": 1795186200000,
+     "speakers": [
+      {
+       "name": "Maxim Salnikov",
+       "photo": "https://cdn.sessionize.com/image/22c1-400o400o1-MuJGQJifHWU14bCSgXwQsy.jpg"
+      },
+      {
+       "name": "Jose Luis Latorre Millas",
+       "photo": "https://cdn.sessionize.com/image/17a3-400o400o1-RutEfAXdkFXCzqbVJZ8men.jpg"
+      },
+      {
+       "name": "Serena Sensini",
+       "photo": "https://cdn.sessionize.com/image/6a14-400o400o1-atJBm6F2VREAZDYzu1E2zs.jpg"
+      },
+      {
+       "name": "Markus Leutwyler",
+       "photo": "https://cdn.sessionize.com/image/9aa3-400o400o1-UfYuLsgkSdDzWeqpyucvhK.png"
+      },
+      {
+       "name": "Lize Raes",
+       "photo": "https://cdn.sessionize.com/image/780b-400o400o1-4HL2FWE3GM1GP4ra7jfrwE.jpg"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "studio1",
+   "name": "Studio 1",
+   "code": "S1",
+   "north": false,
+   "where": "Main building · downstairs",
+   "level": "open",
+   "label": "Open",
+   "target": "1247157",
+   "sessions": [
+    {
+     "id": "1244188",
+     "title": "Hands-on Spec-Driven Development",
+     "start": 1795166400000,
+     "end": 1795172400000,
+     "speakers": [
+      {
+       "name": "Simon Martinelli",
+       "photo": "https://cdn.sessionize.com/image/3673-400o400o1-T3j7ZVaoWYE21yPgUGnZkP.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1247157",
+     "title": "Build Your Own Production-Ready Agentic Apps",
+     "start": 1795176000000,
+     "end": 1795180500000,
+     "speakers": [
+      {
+       "name": "Kevin Dubois",
+       "photo": "https://cdn.sessionize.com/image/7df3-400o400o1-WoJXMV1WNg5WJ88aFuYTku.jpg"
+      },
+      {
+       "name": "Dimitris Andreadis",
+       "photo": "https://cdn.sessionize.com/image/406b-400o400o1-0085aaf6-6d93-4e51-8777-e625a5c05b83.jpg"
+      }
+     ]
+    },
+    {
+     "id": "1251731",
+     "title": "Agent on the Wire: Looking Inside an AI Coding Agent",
+     "start": 1795184400000,
+     "end": 1795188600000,
+     "speakers": [
+      {
+       "name": "Vincent G",
+       "photo": "https://cdn.sessionize.com/image/c660-400o400o1-D8XRuWJ1DQ3t2iZAvuLkWM.jpg"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

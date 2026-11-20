@@ -1,0 +1,74 @@
+<svg viewBox="200 245 1545 1225" role="img" aria-labelledby="vm-title">
+        <title id="vm-title">Map of the rooms at the Zurich Marriott Hotel and the way from the North entrance to Millennium</title>
+        <defs>
+          <marker id="vm-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#fff"/></marker>
+          <marker id="vm-arrow-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path class="vm-k-hands-on" d="M1 1L9 5L1 9Z"/></marker>
+        </defs>
+        <path class="vm-street" d="M1081 697L1389 921L1356 966L1048 742Z"/><path class="vm-street-mid" d="M1065 720L1373 944"/>
+        <path class="vm-slab" d="M1710 366L1382 331L1355 391L1317 390L1316 407L1295 423L1200 431L1189 444L1169 446L1167 456L1115 465L983 452L971 462L922 459L919 467L844 462L814 512L814 525L997 545L1033 540L1304 564L1302 583L1270 589L1255 604L1237 604L1198 622L1197 630L1179 630L1177 638L1054 687L1079 715L1101 712L1110 719L1429 575L1638 581L1708 388Z"/><path class="vm-slab" d="M1168 744L1167 780L1266 782L1264 852L1480 854L1481 844L1618 847L1619 877L1644 877L1711 681L1382 645L1363 685L1350 685L1281 726L1275 747Z"/><path class="vm-slab" d="M233 790L233 803L275 825L268 856L506 983L587 949L603 949L638 968L638 993L688 1020L713 1019L738 1033L827 1004L926 1057L1228 1102L1320 957L1320 942L1094 821L1002 806L1001 792L992 793L994 815L968 812L965 819L933 822L912 813L909 822L880 822L837 798L811 798L786 783L732 798L464 749L424 753L339 737L256 769L251 781Z"/><path class="vm-slab" d="M233 1125L233 1137L253 1148L246 1171L269 1175L270 1165L287 1166L282 1190L500 1307L565 1279L589 1276L638 1303L638 1328L689 1355L714 1354L739 1368L810 1339L828 1339L930 1393L1228 1437L1320 1292L1313 1273L1082 1152L795 1118L728 1132L460 1083L424 1088L341 1072L265 1100L262 1111Z"/>
+        <path class="vm-esc" d="M1077 713L1100 719L1010 819L987 813Z"/>
+        <path class="vm-other" d="M831 1319L836 1328L875 1349L879 1347L879 1351L898 1361L950 1340L871 1295L841 1306L842 1314Z"/><path class="vm-other" d="M1238 545L1317 549L1320 535L1315 539L1309 537L1314 529L1321 533L1322 512L1252 512Z"/><path class="vm-other" d="M1035 480L1017 522L1069 527L1082 496L1052 496L1050 490L1044 495L1043 492L1035 494L1036 486L1079 487L1084 493L1087 484Z"/><path class="vm-other" d="M240 1123L349 1183L350 1210L372 1218L376 1225L502 1291L564 1263L602 1263L609 1271L663 1300L682 1291L704 1291L751 1270L617 1196L547 1226L515 1226L460 1195L460 1174L424 1155L426 1124L343 1079Z"/><path class="vm-other" d="M767 1268L829 1304L863 1290L802 1256Z"/><path class="vm-other" d="M1366 774L1368 782L1375 788L1370 800L1386 800L1389 804L1390 826L1481 825L1481 763L1424 763L1419 773Z"/><path class="vm-other" d="M1389 396L1363 453L1438 455L1438 423L1446 418L1446 402Z"/>
+        <path id="room-millennium" class="vm-room vm-k-talks" d="M1271 1015L1253 1008L1264 986L1087 891L923 963L898 952L826 985L833 992L928 1042L1222 1087L1231 1080Z"/><path id="room-studio4" class="vm-room vm-k-talks" d="M1445 490L1443 544L1438 558L1452 564L1636 564L1635 552L1609 550L1611 491Z"/><path id="room-studio6" class="vm-room vm-k-talks" d="M1076 529L1226 544L1239 510L1090 495Z"/><path id="room-studio3" class="vm-room vm-k-hands-on" d="M1384 670L1361 722L1384 712L1385 725L1351 743L1340 767L1411 768L1419 758L1447 758L1464 679Z"/><path id="room-studio1" class="vm-room vm-k-hands-on" d="M833 1312L756 1273L669 1314L744 1353Z"/><path id="room-century" class="vm-room vm-k-foyer" d="M239 788L437 896L455 891L605 823L600 817L518 774L345 743L336 744Z"/><path id="room-hub2" class="vm-room vm-k-foyer" d="M527 890L595 929L604 927L602 933L661 964L689 953L698 953L702 960L670 974L668 978L735 1014L744 1011L750 1015L799 993L800 984L808 989L816 981L884 951L879 945L808 908L800 908L751 931L744 931L581 842L572 842L544 856L579 880L571 884L556 877Z"/><path id="room-hub4" class="vm-room vm-k-foyer" d="M1418 502L1363 503L1357 577L1141 673L1139 678L1155 686L1434 562L1433 558L1415 562Z"/><path id="room-saechsiluute" class="vm-room vm-k-service" d="M1372 374L1373 390L1439 396L1454 403L1484 406L1492 395L1527 395L1529 398L1566 401L1574 390L1610 390L1680 398L1694 369L1388 337Z"/>
+        <text class="vm-floor" x="760" y="580" text-anchor="start">Floor No 4 · north building</text><text class="vm-floor" x="1712" y="1006" text-anchor="end">Ground floor · north building</text><text class="vm-floor" x="236" y="716" text-anchor="start">2nd floor · main building</text><text class="vm-floor" x="236" y="1384" text-anchor="start">1st floor · main building</text>
+        <path class="vm-lift" d="M1507 776L1507 456"/>
+        <path class="vm-route" d="M1300 814L1372 806L1436 800L1507 776"/><path class="vm-route" d="M1507 456L1470 410L1404 440L1388 556L1344 602L1168 684L1086 706L1000 814L930 872L850 952" marker-end="url(#vm-arrow)"/>
+        <g class="vm-branch vm-s-hands-on"><path class="vm-lift" d="M912 930L912 1234"/><path class="vm-route" d="M912 1234L858 1262L812 1284" marker-end="url(#vm-arrow-b)"/><circle class="vm-start" cx="912" cy="930" r="11"/></g>
+        <g class="vm-entrance">
+          <path d="M1300 814m-30 -22l44 22l-44 22Z"/>
+        </g>
+        <path class="vm-leader vm-wide" d="M1340 912L1306 842"/>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Wasserwerkstrasse&#43;6%2C&#43;Z%C3%BCrich" target="_blank" rel="noopener"><text class="vm-label" x="1346" y="934" text-anchor="start"><tspan class="n">North entrance</tspan><tspan class="u vm-addr" x="1346" y="964">Wasserwerkstrasse 6</tspan></text></a>
+        
+        
+        
+        <g class="vm-pin"><circle cx="960" cy="985" r="30"/><text x="960" y="995">M</text></g>
+        <text class="vm-label" x="1006" y="979" text-anchor="start"><tspan class="n">Millennium</tspan><tspan class="u" x="1006" y="1009">Keynote · talks</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="1500" cy="526" r="30"/><text x="1500" y="536">S4</text></g>
+        <text class="vm-label" x="1546" y="520" text-anchor="start"><tspan class="n">Studio 4</tspan><tspan class="u" x="1546" y="550">Talks</tspan></text>
+        
+        
+        <line class="vm-leader" x1="1158" y1="448" x2="1158" y2="519"/>
+        <g class="vm-pin"><circle cx="1158" cy="448" r="30"/><text x="1158" y="458">S6</text></g>
+        <text class="vm-label" x="1112" y="442" text-anchor="end"><tspan class="n">Studio 6</tspan><tspan class="u" x="1112" y="472">Talks</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="1408" cy="722" r="30"/><text x="1408" y="732">S3</text></g>
+        <text class="vm-label" x="1454" y="716" text-anchor="start"><tspan class="n">Studio 3</tspan><tspan class="u" x="1454" y="746">Hands-On · Panel</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="748" cy="1312" r="30"/><text x="748" y="1322">S1</text></g>
+        <text class="vm-label" x="748" y="1410" text-anchor="middle"><tspan class="n">Studio 1</tspan><tspan class="u" x="748" y="1440">Hands-On</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="330" cy="800" r="30"/><text x="330" y="810">C</text></g>
+        <text class="vm-label" x="376" y="794" text-anchor="start"><tspan class="n">Century</tspan><tspan class="u" x="376" y="824">Sponsors · food · apéro</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="690" cy="938" r="30"/><text x="690" y="948">H2</text></g>
+        <text class="vm-label" x="610" y="1052" text-anchor="middle"><tspan class="n">Hub 2</tspan><tspan class="u" x="610" y="1082">Sponsors · food · apéro</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="1388" cy="530" r="30"/><text x="1388" y="540">H4</text></g>
+        <text class="vm-label" x="1342" y="524" text-anchor="end"><tspan class="n">Hub 4</tspan><tspan class="u" x="1342" y="554">Breaks · lunch</tspan></text>
+        
+        <circle id="room-welcome" class="vm-spot vm-k-welcome" cx="850" cy="952" r="34"/>
+        
+        <g class="vm-pin vm-sm"><circle cx="850" cy="952" r="23"/><text x="850" y="960">W</text></g>
+        <text class="vm-label vm-sm" x="836" y="896" text-anchor="end"><tspan class="n">Welcome Desk</tspan><tspan class="u" x="836" y="921">Badge pick-up</tspan></text>
+        
+        
+        
+        <g class="vm-pin"><circle cx="1440" cy="364" r="30"/><path class="vm-hanger" transform="translate(1440 364)" d="M-4 -10a4 4 0 0 1 8 0c0 3-4 3-4 6v1l17 10h-34l17-10"/></g>
+        <text class="vm-label" x="1396" y="292" text-anchor="start"><tspan class="n">Sächsilüüte</tspan><tspan class="u" x="1396" y="322">Cloakroom</tspan></text>
+        
+        
+        <g class="vm-wc" transform="translate(1610 400)"><rect x="-30" y="-19" width="60" height="38" rx="10"/><text y="9">WC</text><text class="vm-wc-n" x="0" y="46">on the stairs</text></g><g class="vm-wc" transform="translate(1575 772)"><rect x="-30" y="-19" width="60" height="38" rx="10"/><text y="9">WC</text></g><g class="vm-wc" transform="translate(933 884)"><rect x="-30" y="-19" width="60" height="38" rx="10"/><text y="9">WC</text></g><g class="vm-wc" transform="translate(933 1305)"><rect x="-30" y="-19" width="60" height="38" rx="10"/><text y="9">WC</text></g>
+      </svg>
