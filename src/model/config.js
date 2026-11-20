@@ -57,10 +57,13 @@ export const POP_W = { fill: 0.55, speed: 0.25, pressure: 0.2 };
 /** Minutes before the start by which a room must be filling to get the full speed score. */
 export const SPEED_FULL_MS = 20 * 60000;
 
+/** Rooms up to this many seats count as small: a full one signals unmet demand. Separates the studios from Millennium. */
+export const SMALL_ROOM_CAP = 200;
+
 /** Prior peak fill (fraction of capacity) for sessions without recorded data. */
 export function priorPeak(session, cap) {
   const f = (session.format || '').toLowerCase();
-  if (cap > 100) return f.includes('lightning') ? 0.35 : 0.5;
+  if (cap > SMALL_ROOM_CAP) return f.includes('lightning') ? 0.35 : 0.5;
   if (f.includes('hands')) return 0.85;
   if (f.includes('panel')) return 0.8;
   return 0.68;

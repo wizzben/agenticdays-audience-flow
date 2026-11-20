@@ -137,10 +137,21 @@ for (const [label, url] of [['file://', 'file://' + path.join(root, 'index.html'
   check(`[${label}] Escape clears the selection`, (await page.evaluate(() => AED.state.selected)) === null);
 
   // hover a cloud label highlights sessions
-  const hp = await page.evaluate(() => { for (const el of document.querySelectorAll('.lbl.cloud:not(.off)')) { const r = el.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; if (document.elementFromPoint(x, y)?.closest('.lbl.cloud') === el) return { x, y }; } return null; });
-  await page.mouse.move(hp.x, hp.y);
-  await page.waitForTimeout(200);
-  check(`[${label}] hovering a cloud shows a tooltip and highlights sessions`, await page.evaluate(() => !document.getElementById('tip').hidden && document.querySelectorAll('.blk.hl').length > 0));
+  // Selecting a room zoomed the camera in, which moves the cloud labels off screen: reset the view and let the
+  // camera settle first. Labels are re-laid out every frame, so re-aim if the label moved away.
+  await page.keyboard.press('r');
+  await page.waitForTimeout(1500);
+  const findCloud = () => { for (const el of document.querySelectorAll('.lbl.cloud:not(.off)')) { const r = el.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; if (document.elementFromPoint(x, y)?.closest('.lbl.cloud') === el) return { x, y }; } return null; };
+  let hovered = false;
+  for (let attempt = 0; attempt < 4 && !hovered; attempt++) {
+    await page.waitForTimeout(700);
+    const hp = await page.evaluate(findCloud);
+    if (!hp) continue;
+    await page.mouse.move(hp.x, hp.y);
+    await page.waitForTimeout(200);
+    hovered = await page.evaluate(() => !document.getElementById('tip').hidden && document.querySelectorAll('.blk.hl').length > 0);
+  }
+  check(`[${label}] hovering a cloud shows a tooltip and highlights sessions`, hovered);
   await page.mouse.move(5, 400);
 
   // network allow-list

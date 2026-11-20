@@ -3,6 +3,7 @@
 import {
   CROWD_TOTAL, HUB_MIN_FRACTION, STEP_MS, WINDOW_START_HOUR, WINDOW_HOURS, ROOMS, HUBS, LOC_ORDER, BANDS, TAU,
   GAP_MS, COVER_MS, EXIT_MS, ARRIVAL_MS, POP_W, SPEED_FULL_MS, priorPeak,
+  SMALL_ROOM_CAP,
 } from './config.js';
 import { matchRoom } from './recording.js';
 import { extractTopics, normTopic } from './topics.js';
@@ -137,7 +138,7 @@ export function popularityFromData(session, cap, pts, peakFill) {
   const tFill = firstTimeAtLeast(pts, 'filling');
   const reachFilling = tFill ?? tFull;
   const speed = reachFilling == null ? 0 : clamp((session.start - reachFilling) / SPEED_FULL_MS, 0, 1);
-  const small = cap <= 100;
+  const small = cap <= SMALL_ROOM_CAP;
   const fullSeen = pts.some((p) => p.level === 'full');
   const fillSeen = pts.some((p) => p.level === 'filling');
   const pressure = fullSeen ? (small ? 1 : 0.5) : fillSeen ? (small ? 0.4 : 0.2) : 0;
