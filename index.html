@@ -30,7 +30,7 @@
     </div>
   </header>
 
-  <div id="key" aria-label="Room level colours"><span><i style="background:#4fd6a8"></i>Open</span><span><i style="background:#f4c24f"></i>Filling</span><span><i style="background:#f0605d"></i>Full</span><span><i style="background:#6b8cff"></i>Running</span><span class="pj"><i></i>Projected</span></div>
+  <div id="key" aria-label="Room level colours"><span><i style="background:#4fd6a8"></i>Open</span><span><i style="background:#f4c24f"></i>Filling</span><span><i style="background:#f0605d"></i>Full</span><span><i style="background:#6b8cff"></i>Running</span><span class="pj"><i></i>Projected</span><span class="src">Data: agenticdays.com (program, room status, venue map) · Zurich Marriott brochure (capacities) · headcounts are estimates</span></div>
 
   <aside id="legend" hidden>
     <button class="close" aria-label="Close legend">×</button>
@@ -39,7 +39,7 @@
     <ul class="key">
       <li><i style="background:#4fd6a8"></i><b>Open</b> – seats available</li>
       <li><i style="background:#f4c24f"></i><b>Filling</b> – few seats left</li>
-      <li><i style="background:#f0605d"></i><b>Full</b> – no seats left (50-seat rooms: demand beyond capacity is likely)</li>
+      <li><i style="background:#f0605d"></i><b>Full</b> – no seats left (small rooms: demand beyond capacity is likely)</li>
       <li><i style="background:#6b8cff"></i><b>Running</b> – session started</li>
     </ul>
     <h3>Measured vs. estimated vs. projected</h3>
@@ -50,6 +50,15 @@
     </ul>
     <h3>Topic clouds</h3>
     <p>20 topics extracted from the session titles and descriptions: recurring words are grouped under a general name, and a session only feeds a topic when its own text contains those words. Size = estimated audience-minutes so far (or people in rooms now). Hover or tap one to light up the rooms and sessions that feed it.</p>
+    <h3>Data sources</h3>
+    <ul>
+      <li><b>Sessions, speakers, times, rooms, descriptions:</b> the conference's public MCP server, <a href="https://www.agenticdays.com/mcp-setup" target="_blank" rel="noopener">agenticdays.com/mcp</a> (snapshot of 20 Nov 2026).</li>
+      <li><b>Room levels:</b> the public room status of the conference website, <code>agenticdays.com/api/rooms.json</code>, recorded every 30 s on 20 Nov 2026 from about 12:28.</li>
+      <li><b>Venue layout:</b> the venue map on <a href="https://www.agenticdays.com/venue" target="_blank" rel="noopener">agenticdays.com/venue</a> (itself redrawn from the hotel's floor overview), with the staircases and entry area corrected from on-site observation.</li>
+      <li><b>Room capacities:</b> the <a href="https://www.conferencehotelgroup.com/img/hotels/files/816/Event_Brochure_EN.pdf" target="_blank" rel="noopener">Zurich Marriott Hotel event brochure</a>; Studio 3 from on-site observation.</li>
+      <li><b>500 attendees:</b> figure supplied by the author of this visualization, not a published number.</li>
+    </ul>
+    <p>Independent project, not affiliated with the conference organisers or the hotel. Headcounts and flows are estimates, not official figures.</p>
     <h3>Controls</h3>
     <p>Drag to orbit, scroll to zoom, right-drag to pan, click a room to focus it. <kbd>Space</kbd> play/pause · <kbd>←</kbd>/<kbd>→</kbd> ±1 min (<kbd>Shift</kbd> ±10) · <kbd>[</kbd>/<kbd>]</kbd> previous/next session change · <kbd>L</kbd> live · <kbd>R</kbd> reset.</p>
     <p class="meta" id="lg-meta"></p>

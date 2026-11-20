@@ -84,6 +84,19 @@ about how many people were turned away; the platform's `running` flag lagged the
 the real data, so a room can show `full` after its session started (handled: it is treated as still full);
 the vertical spacing of the floors is schematic.
 
+## Data sources
+
+| Data | Source |
+|---|---|
+| Sessions, speakers, times, rooms, descriptions (`data/sessions.json`) | Public MCP server of Agentic Engineering Days Zurich 2026, `https://www.agenticdays.com/mcp` ([setup page](https://www.agenticdays.com/mcp-setup)), fetched 20 Nov 2026 |
+| Room levels (`recording.jsonl` on the `data` branch, `data/recording-embedded.jsonl`) | Public room status of the conference website, `https://www.agenticdays.com/api/rooms.json`, polled every 30 s on 20 Nov 2026 from about 12:28 |
+| Venue layout (`reference/`, `src/venue/geometry.js`) | Venue map on <https://www.agenticdays.com/venue>, itself redrawn from the floor overview of the Zurich Marriott Hotel; staircases and entry area corrected from on-site observation |
+| Room capacities | [Zurich Marriott Hotel event brochure](https://www.conferencehotelgroup.com/img/hotels/files/816/Event_Brochure_EN.pdf), cross-checked with [Zürich Tourism](https://www.zuerich.com/en/visit/place/zurich-marriott-hotel); Studio 3 (about 40) from on-site observation |
+| Total of 500 attendees | Supplied by the author, not a published number |
+
+This is an independent project, not affiliated with the conference organisers (felixideas GmbH) or the hotel. The
+conference data belongs to its publishers. Headcounts, flows and popularity are estimates, not official figures.
+
 ## Venue model
 
 The venue map is an exploded axonometric drawing (four stacked floor slabs). `scripts/gen-venue.mjs` inverts an

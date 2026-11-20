@@ -118,3 +118,6 @@ kbd { font: 11px ui-monospace, Menlo, monospace; background: rgba(255,255,255,.1
 #key span { display: inline-flex; align-items: center; gap: 5px; } #key i { width: 9px; height: 9px; border-radius: 3px; display: inline-block; }
 #key .pj i { background: repeating-linear-gradient(135deg, var(--proj) 0 2px, transparent 2px 4px); border: 1px solid var(--proj); }
 @media (max-width: 760px) { #key { left: 10px; gap: 8px; font-size: 10px; } }
+
+#key .src { opacity: 0.75; margin-left: 8px; }
+@media (max-width: 900px) { #key .src { display: none; } }
