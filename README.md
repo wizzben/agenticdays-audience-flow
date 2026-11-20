@@ -74,8 +74,9 @@ All of this lives in `src/model/` as pure, unit-tested code (`npm test`).
    from schedule + capacity + topic popularity so far and flagged: hatched timeline blocks, hatched fill bars,
    violet dashed cloud labels, a "Projected · not measured" chip.
 
-Room capacities are the theatre-style figures from the Zurich Marriott event brochure (Millennium 650, Studio 4 120,
-Studio 3 100, Studio 1 60, Studio 6 60); the crowd total is 500 attendees. The rooms together seat 990, more than the
+Room capacities: theatre seating from the Zurich Marriott event brochure for the talk rooms (Millennium 650, Studio 4
+120, Studio 6 60) and schoolroom seating for the hands-on rooms (Studio 3 about 40 as set up on the day, Studio 1 39
+per the brochure); the crowd total is 500 attendees. The rooms together seat 909, more than the
 crowd, so when several rooms report `full` at once the counts are scaled down to fit 500 people.
 
 Limits: the actual seating on the day may differ from the brochure figures; the level bands are coarse; a `full` small room says nothing

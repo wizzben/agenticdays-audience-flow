@@ -121,6 +121,26 @@ for (const [k, [x, y, f]] of Object.entries(NODES)) {
   const w = W([x, y], f);
   out.nodes[k] = [r1(w[0]), ELEV[f], r1(w[1])];
 }
+// The exploded drawing offsets the floors schematically, so the inverted escalator came out at a right angle to
+// Hub 4. On site it is the straight continuation of the Hub 4 corridor: along the skywalk, then down to the 2nd
+// floor, where an entry area leads on to Hub 2. Put those nodes on the corridor's axis.
+{
+  const strip = out.rooms.hub4.poly.filter((p) => p[1] > 0); // the corridor's end towards the main building
+  const ax = r1(strip.reduce((a, p) => a + p[0], 0) / strip.length);
+  const zEnd = Math.max(...strip.map((p) => p[1]));
+  const yTop = ELEV.n4, yBot = ELEV.main2;
+  out.nodes.h4_in[0] = ax;
+  out.nodes.s6_link = [ax, yTop, r1(zEnd - 5.5)];
+  out.nodes.skywalk_mid = [ax, yTop, r1(zEnd)];
+  out.nodes.esc_top = [ax, yTop, r1(zEnd + 7)];
+  out.nodes.esc_bot = [ax, yBot, r1(zEnd + 18)];
+  const hub2North = Math.min(...out.rooms.hub2.poly.filter((p) => p[0] > 0).map((p) => p[1]));
+  const milWest = Math.min(...out.rooms.millennium.poly.filter((p) => p[1] < hub2North - 1).map((p) => p[0]));
+  const z0 = r1(zEnd + 16.5), x0 = r1(ax - 4.6), x1 = r1(milWest - 0.3);
+  const poly = [[x0, z0], [x1, z0], [x1, r1(hub2North)], [x0, r1(hub2North)]];
+  out.rooms.entry = { floor: 'main2', y: yBot, kind: 'hub', poly, obb: { cx: r1((x0 + x1) / 2), cz: r1((z0 + hub2North) / 2), w: r1(x1 - x0), d: r1(hub2North - z0), rot: 0 } };
+  console.log('escalator axis x', ax, 'corridor end z', zEnd, 'entry', JSON.stringify(poly));
+}
 // compute bbox
 const xs = out.slabs.flatMap((s) => s.poly.map((p) => p[0])), zs = out.slabs.flatMap((s) => s.poly.map((p) => p[1]));
 out.bbox = [Math.min(...xs), Math.max(...xs), Math.min(...zs), Math.max(...zs)].map(r1);

@@ -57,7 +57,8 @@ export function createScene(container, labelsEl) {
   }
   // hubs (floor patches)
   const hubMeshes = {};
-  for (const h of HUBS) {
+  // `entry` is the area between Hub 2 and the foot of the escalator: drawn like a hub, but nobody is assigned to it
+  for (const h of [...HUBS, { id: 'entry' }]) {
     const r = G.rooms[h.id];
     if (!r) continue;
     const geo = new THREE.ShapeGeometry(shapeOf(r.poly));
@@ -167,6 +168,7 @@ export function createScene(container, labelsEl) {
     const l = mk('hub', `<b>${h.name}</b><span class="cnt"></span>`, new THREE.Vector3(g.obb.cx, g.y + 3.2, g.obb.cz), { hubId: h.id });
     l.cnt = l.el.querySelector('.cnt');
   }
+  if (G.rooms.entry) mk('floor', 'Entry area', new THREE.Vector3(G.rooms.entry.obb.cx, G.rooms.entry.y + 0.4, G.rooms.entry.obb.cz));
   const floorAnchors = {};
   for (const s of G.slabs) {
     const xs = s.poly.map((p) => p[0]);

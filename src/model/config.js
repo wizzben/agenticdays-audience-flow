@@ -15,13 +15,16 @@ export const WINDOW_HOURS = 5;
 
 export const RECORDING_URL = 'https://raw.githubusercontent.com/wizzben/agenticdays-audience-flow/data/recording.jsonl';
 
-/** Session rooms. `cap` is the theatre-style capacity from the Zurich Marriott event brochure. */
+/**
+ * Session rooms. `cap` is the capacity from the Zurich Marriott event brochure: theatre seating for the talk rooms,
+ * schoolroom seating (tables) for the hands-on rooms. Studio 3 is about 40 as set up on the day.
+ */
 export const ROOMS = [
   { id: 'millennium', name: 'Millennium', short: 'M', cap: 650, floor: 'main2' },
   { id: 'studio4', name: 'Studio 4', short: 'S4', cap: 120, floor: 'n4' },
   { id: 'studio6', name: 'Studio 6', short: 'S6', cap: 60, floor: 'n4' },
-  { id: 'studio3', name: 'Studio 3', short: 'S3', cap: 100, floor: 'n0' },
-  { id: 'studio1', name: 'Studio 1', short: 'S1', cap: 60, floor: 'main1' },
+  { id: 'studio3', name: 'Studio 3', short: 'S3', cap: 40, floor: 'n0' },
+  { id: 'studio1', name: 'Studio 1', short: 'S1', cap: 39, floor: 'main1' },
 ];
 
 /** Hubs: where people are when they are not in a session. `w` = share of the non-session crowd. */

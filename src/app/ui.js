@@ -154,7 +154,7 @@ export function createUI(app) {
     lastPanelKey = key;
     const col = LEVEL_HEX[lv.idle ? 'none' : lv.level] || LEVEL_HEX.none;
     const list = model.sessions.filter((x) => x.roomId === selectedRoom);
-    let h = `<button class="close" aria-label="Close">×</button><h2>${esc(room.name)}</h2><div class="sub">${room.cap} seats (theatre setup) · ${esc(app.floorLabel(room.floor))}</div>`;
+    let h = `<button class="close" aria-label="Close">×</button><h2>${esc(room.name)}</h2><div class="sub">${room.cap} seats (${room.cap <= 40 ? 'schoolroom' : 'theatre'} setup) · ${esc(app.floorLabel(room.floor))}</div>`;
     h += `<div class="lv"><i style="background:${col}"></i>${esc(LEVEL_NAME[lv.idle ? 'none' : lv.level])} <span class="tag ${lv.rec ? '' : 'p'}">${lv.rec ? 'measured level' : 'projected'}</span></div>`;
     h += `<div class="big">≈ ${Math.round(rm.count)} <small>of ${room.cap} · estimated headcount</small></div><div class="meter"><u style="width:${Math.min(100, rm.fill * 100).toFixed(0)}%"></u></div>`;
     if (s) {
