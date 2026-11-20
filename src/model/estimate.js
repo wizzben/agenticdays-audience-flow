@@ -400,7 +400,7 @@ export function levelAt(model, roomId, t) {
     // last sample at or before t for the room
     const s = model.samples;
     let lo = 0, hi = s.length - 1, best = -1;
-    while (lo <= hi) { const m = (lo + hi) >> 1; if (s[m].t <= t + COVER_MS) { best = m; lo = m + 1; } else hi = m - 1; }
+    while (lo <= hi) { const m = (lo + hi) >> 1; if (s[m].t <= t + 20000) { best = m; lo = m + 1; } else hi = m - 1; }
     for (let i = best; i >= 0 && t - s[i].t < 10 * 60000; i--) {
       const r = s[i].rooms[roomId];
       if (r && r.level) return { level: r.level, rec: true };

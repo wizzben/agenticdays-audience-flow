@@ -157,11 +157,14 @@ export function createScene(container, labelsEl) {
     renderer.domElement.style.width = w + 'px';
     renderer.domElement.style.height = h + 'px';
     camera.aspect = w / h;
-    // keep the venue in view on tall (phone) screens
-    camera.fov = w / h < 0.8 ? 52 : 38;
+    // keep the venue in view on tall (phone) screens: look along the long axis and widen the field of view
+    const tall = w / h < 0.8;
+    camera.fov = tall ? 55 : 38;
     camera.updateProjectionMatrix();
-    if (!resize.once) { resize.once = true; if (w / h < 0.8) { home.pos.set(92, 108, 150); camera.position.copy(home.pos); } }
+    if (tall) { home.pos.set(28, 128, 205); home.target.set(0, 20, -6); } else { home.pos.set(136, 66, 34); home.target.set(0, 24, 0); }
+    if (!userMoved) { camera.position.copy(home.pos); controls.target.copy(home.target); }
   }
+  let userMoved = false;
   window.addEventListener('resize', resize);
   resize();
 
@@ -178,7 +181,7 @@ export function createScene(container, labelsEl) {
     controls.target.lerpVectors(anim.q0, anim.q1, e);
     if (k >= 1) anim = null;
   }
-  controls.addEventListener('start', () => { anim = null; });
+  controls.addEventListener('start', () => { anim = null; userMoved = true; });
   function resetView() { flyTo(home.pos, home.target); }
   function focusRoom(id) {
     const rm = rooms[id];
@@ -203,6 +206,7 @@ export function createScene(container, labelsEl) {
       let x = (v.x + 1) * 0.5 * w, y = (1 - v.y) * 0.5 * h;
       if (l.roomId || l.hubId) {
         if (!l.w || l.wAt !== w) { l.w = l.el.offsetWidth || 90; l.h = l.el.offsetHeight || 34; l.wAt = w; }
+        x = Math.min(w - l.w / 2 - 4, Math.max(l.w / 2 + 4, x));
         // simple vertical de-overlap against already placed room/hub labels
         for (let pass = 0; pass < 8; pass++) {
           let hit = false;

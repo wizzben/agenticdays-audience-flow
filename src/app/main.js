@@ -12,6 +12,11 @@ import { createClouds } from './clouds.js';
 import { createUI, fmtHM } from './ui.js';
 import * as THREE from 'three';
 
+function hasWebGL() {
+  try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch (e) { return false; }
+}
+function boot() {
+
 const params = new URLSearchParams(location.search);
 const demoParam = params.get('demo');
 const demo = demoParam !== null;
@@ -300,3 +305,10 @@ window.AED = {
   app, model: () => model, clouds, scene: sc, crowd, perf, setTime: (t) => app.seek(t), nowFn,
 };
 window.AED_READY = true;
+}
+
+if (hasWebGL()) boot();
+else {
+  document.getElementById('stage').innerHTML = '<p style="padding:90px 24px;max-width:560px;color:#c4cee6">This visualisation needs WebGL, which is not available in this browser. Please try a current Chrome, Firefox, Safari or Edge with hardware acceleration enabled.</p>';
+  window.AED_READY = true;
+}

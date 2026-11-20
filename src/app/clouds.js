@@ -148,9 +148,10 @@ export function createClouds(scene, labelsEl, camera, container) {
       if (!visible) { if (c.shown) { c.label.style.display = 'none'; c.shown = false; } continue; }
       v.copy(c.g.position); v.y += c.r * 0.15;
       v.project(camera);
-      const x = (v.x + 1) * 0.5 * w, y = (1 - v.y) * 0.5 * h;
-      if (v.z > 1 || x < -50 || x > w + 50 || y < -20 || y > h + 20) { if (c.shown) { c.label.style.display = 'none'; c.shown = false; } continue; }
+      const x0 = (v.x + 1) * 0.5 * w, y = (1 - v.y) * 0.5 * h;
+      if (v.z > 1 || x0 < -80 || x0 > w + 80 || y < -20 || y > h + 20) { if (c.shown) { c.label.style.display = 'none'; c.shown = false; } continue; }
       if (!c.w) { c.w = c.label.offsetWidth || 80; c.h = c.label.offsetHeight || 24; }
+      const x = Math.min(w - c.w / 2 - 4, Math.max(c.w / 2 + 4, x0));
       const hl = highlight === c.topic.id;
       const rect = [x - c.w / 2, y - c.h / 2, x + c.w / 2, y + c.h / 2];
       let hit = false;

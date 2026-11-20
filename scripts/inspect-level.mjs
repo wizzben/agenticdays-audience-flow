@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import { buildModel } from '../src/model/estimate.js';
+import { synthRecording } from '../src/model/synth.js';
+const raw = JSON.parse(fs.readFileSync('data/sessions.json'));
+const m = buildModel({ sessions: raw, recording: synthRecording(raw, { seed: 7 }) });
+const t = Date.parse('2026-11-20T14:08:00+01:00');
+console.log(m.levelAt('millennium', t), m.levelAt('studio4', t));
+const s = m.samples.filter((x) => Math.abs(x.t - t) < 70000);
+console.log(s.map((x) => JSON.stringify(x.rooms.millennium)));
+console.log(m.sessions.filter((x) => x.roomId === 'millennium').map((x) => [new Date(x.start).toISOString().slice(11, 16), new Date(x.end).toISOString().slice(11, 16), x.id]));
