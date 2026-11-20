@@ -264,6 +264,18 @@ export function buildModel(input) {
   const overflow = new Float32Array(K); // unmet demand: people who would fill rooms beyond the crowd
   const sessCount = new Map(sessions.map((s) => [s.id, new Float32Array(K)])); // scaled persons per session
   const sessRec = new Map(sessions.map((s) => [s.id, new Uint8Array(K)]));
+  // raw per-session persons per step, lightly smoothed (+-2 steps) so jittery level flips do not make people flicker
+  const rawVals = new Map();
+  for (const s of sessions) {
+    const i = info.get(s.id), cap = capOf[s.roomId];
+    const a = new Float32Array(K), b = new Float32Array(K);
+    for (let k = 0; k < K; k++) {
+      const t = t0 + k * STEP_MS;
+      a[k] = t < s.start - ARRIVAL_MS - 10 * 60000 || t > s.end + EXIT_MS + 1000 ? 0 : i.curve(t) * cap;
+    }
+    for (let k = 0; k < K; k++) { let sum = 0, n = 0; for (let d = -2; d <= 2; d++) { const j = k + d; if (j >= 0 && j < K) { sum += a[j]; n++; } } b[k] = sum / n; }
+    rawVals.set(s.id, b);
+  }
   const hubW = HUBS.reduce((a, h) => a + h.w, 0);
   for (let k = 0; k < K; k++) {
     const t = t0 + k * STEP_MS;
@@ -273,7 +285,8 @@ export function buildModel(input) {
     for (const s of sessions) {
       const i = info.get(s.id);
       if (t < s.start - ARRIVAL_MS - 10 * 60000 || t > s.end + EXIT_MS + 1000) continue;
-      const v = i.curve(t) * capOf[s.roomId];
+      const v = rawVals.get(s.id)[k];
+      if (v === 0 && (t < s.start - ARRIVAL_MS - 10 * 60000 || t > s.end + EXIT_MS + 1000)) continue;
       raw[s.roomId] += v;
       sessCount.get(s.id)[k] = v;
       sessRec.get(s.id)[k] = i.hasData && covered[k] ? 1 : 0;
