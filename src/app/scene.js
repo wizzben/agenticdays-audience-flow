@@ -6,7 +6,10 @@ import { ROOMS, HUBS } from '../model/config.js';
 import { buildRoutes } from './routes.js';
 
 export const LEVEL_HEX = { open: '#4fd6a8', filling: '#f4c24f', full: '#f0605d', running: '#6b8cff', none: '#7a869c' };
-const lc = (k) => new THREE.Color(LEVEL_HEX[k] || LEVEL_HEX.none);
+const LC = {};
+for (const [k, hex] of Object.entries(LEVEL_HEX)) LC[k] = new THREE.Color(hex);
+const lc = (k) => (LC[k] || LC.none).clone();
+const lcRef = (k) => LC[k] || LC.none;
 
 const FLOOR_LABEL = { n4: 'Floor 4 · north building', n0: 'Ground floor · north building', main2: '2nd floor · main building', main1: '1st floor · main building' };
 
@@ -31,7 +34,7 @@ export function createScene(container, labelsEl) {
   sun.position.set(60, 120, 80);
   scene.add(sun);
 
-  const home = { pos: new THREE.Vector3(150, 72, 38), target: new THREE.Vector3(0, 24, 0) };
+  const home = { pos: new THREE.Vector3(136, 66, 34), target: new THREE.Vector3(0, 24, 0) };
   camera.position.copy(home.pos);
   controls.target.copy(home.target);
 
@@ -119,7 +122,7 @@ export function createScene(container, labelsEl) {
     el.className = 'lbl ' + cls;
     el.innerHTML = html;
     labelsEl.appendChild(el);
-    const o = { el, anchor, ...extra };
+    const o = { el, anchor, lx: -1e9, ly: -1e9, ...extra };
     labels.push(o);
     return o;
   };
@@ -188,14 +191,30 @@ export function createScene(container, labelsEl) {
 
   // --- label projection (no allocation per frame beyond a shared vector)
   const v = new THREE.Vector3();
+  const placed = new Float32Array(64);
   function updateLabels() {
     const w = container.clientWidth, h = container.clientHeight;
+    let np = 0;
     for (const l of labels) {
       v.copy(l.anchor).project(camera);
       const vis = v.z < 1 && v.z > -1 && Math.abs(v.x) < 1.15 && Math.abs(v.y) < 1.15;
       if (!vis) { if (l.shown !== false) { l.el.style.display = 'none'; l.shown = false; } continue; }
       if (l.shown === false) { l.el.style.display = ''; l.shown = true; }
-      l.el.style.transform = `translate(-50%,-100%) translate(${((v.x + 1) * 0.5 * w).toFixed(1)}px,${((1 - v.y) * 0.5 * h).toFixed(1)}px)`;
+      let x = (v.x + 1) * 0.5 * w, y = (1 - v.y) * 0.5 * h;
+      if (l.roomId || l.hubId) {
+        if (!l.w || l.wAt !== w) { l.w = l.el.offsetWidth || 90; l.h = l.el.offsetHeight || 34; l.wAt = w; }
+        // simple vertical de-overlap against already placed room/hub labels
+        for (let pass = 0; pass < 8; pass++) {
+          let hit = false;
+          for (let i = 0; i < np; i++) {
+            const o = i * 4;
+            if (x - l.w / 2 < placed[o + 2] + 3 && x + l.w / 2 > placed[o] - 3 && y - l.h < placed[o + 3] && y > placed[o + 1]) { y = placed[o + 1] - 3; hit = true; break; }
+          }
+          if (!hit) break;
+        }
+        if (np < 16) { const o = np * 4; placed[o] = x - l.w / 2; placed[o + 1] = y - l.h; placed[o + 2] = x + l.w / 2; placed[o + 3] = y; np++; }
+      }
+      if (Math.abs(x - l.lx) > 0.6 || Math.abs(y - l.ly) > 0.6) { l.lx = x; l.ly = y; l.el.style.transform = `translate(-50%,-100%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`; }
     }
   }
 
@@ -203,7 +222,7 @@ export function createScene(container, labelsEl) {
   function setRoomState(id, fill, level, rec, selected, hl) {
     const rm = rooms[id];
     if (!rm) return;
-    const target = lc(level);
+    const target = lcRef(level);
     rm.color.lerp(target, 0.15);
     rm.curFill += (fill - rm.curFill) * 0.2;
     const f = Math.max(0.02, rm.curFill);

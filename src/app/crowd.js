@@ -37,7 +37,7 @@ export function createCrowd(scene, N) {
 
   let model = null, L = 0, K = 0, routes = null, seats = null, lastChange = null, locKind = null, locIds = null;
   const levelCol = new Float32Array(8 * 3); // per location base color (r,g,b)
-  const tmp = { x: 0, y: 0, z: 0 };
+  const tmpA = new Float64Array(3);
   let curLoc = 0;
 
   function buildSeats() {
@@ -104,36 +104,37 @@ export function createCrowd(scene, N) {
     const fx = sf[a * 3], fy = sf[a * 3 + 1], fz = sf[a * 3 + 2];
     const tx = st[a * 3], ty = st[a * 3 + 1], tz = st[a * 3 + 2];
     const n = rt.n, p = rt.pts;
-    const l0 = Math.hypot(p[0] - fx, p[1] - fy, p[2] - fz);
-    const l1 = Math.hypot(tx - p[(n - 1) * 3], ty - p[(n - 1) * 3 + 1], tz - p[(n - 1) * 3 + 2]);
+    const l0 = Math.sqrt((p[0] - fx) * (p[0] - fx) + (p[1] - fy) * (p[1] - fy) + (p[2] - fz) * (p[2] - fz));
+    const dx1 = tx - p[(n - 1) * 3], dy1 = ty - p[(n - 1) * 3 + 1], dz1 = tz - p[(n - 1) * 3 + 2];
+    const l1 = Math.sqrt(dx1 * dx1 + dy1 * dy1 + dz1 * dz1);
     const total = l0 + rt.len + l1;
     const dur = (total / WALK_SPEED) * 1000;
     if (el >= dur || el < 0) { seatOf(to, a); return 0; }
     let d = (el / dur) * total;
     if (d < l0) {
       const q = d / l0;
-      tmp.x = fx + (p[0] - fx) * q; tmp.y = fy + (p[1] - fy) * q; tmp.z = fz + (p[2] - fz) * q;
+      tmpA[0] = fx + (p[0] - fx) * q; tmpA[1] = fy + (p[1] - fy) * q; tmpA[2] = fz + (p[2] - fz) * q;
       return 1;
     }
     d -= l0;
     if (d >= rt.len) {
       const q = l1 > 0 ? (d - rt.len) / l1 : 1;
       const ex = p[(n - 1) * 3], ey = p[(n - 1) * 3 + 1], ez = p[(n - 1) * 3 + 2];
-      tmp.x = ex + (tx - ex) * q; tmp.y = ey + (ty - ey) * q; tmp.z = ez + (tz - ez) * q;
+      tmpA[0] = ex + (tx - ex) * q; tmpA[1] = ey + (ty - ey) * q; tmpA[2] = ez + (tz - ez) * q;
       return 1;
     }
     let i = 1;
     while (i < n - 1 && rt.cum[i] < d) i++;
     const seg = rt.cum[i] - rt.cum[i - 1] || 1;
     const q = (d - rt.cum[i - 1]) / seg;
-    tmp.x = p[(i - 1) * 3] + (p[i * 3] - p[(i - 1) * 3]) * q;
-    tmp.y = p[(i - 1) * 3 + 1] + (p[i * 3 + 1] - p[(i - 1) * 3 + 1]) * q;
-    tmp.z = p[(i - 1) * 3 + 2] + (p[i * 3 + 2] - p[(i - 1) * 3 + 2]) * q;
+    tmpA[0] = p[(i - 1) * 3] + (p[i * 3] - p[(i - 1) * 3]) * q;
+    tmpA[1] = p[(i - 1) * 3 + 1] + (p[i * 3 + 1] - p[(i - 1) * 3 + 1]) * q;
+    tmpA[2] = p[(i - 1) * 3 + 2] + (p[i * 3 + 2] - p[(i - 1) * 3 + 2]) * q;
     return 1;
   }
   function seatOf(li, a) {
     const sp = seats[li];
-    tmp.x = sp[a * 3]; tmp.y = sp[a * 3 + 1]; tmp.z = sp[a * 3 + 2];
+    tmpA[0] = sp[a * 3]; tmpA[1] = sp[a * 3 + 1]; tmpA[2] = sp[a * 3 + 2];
   }
 
   /** Update all instances for sim time t (ms) and wall clock seconds (for hub mingling). */
@@ -141,7 +142,7 @@ export function createCrowd(scene, N) {
     if (!model) return;
     for (let a = 0; a < N; a++) {
       const walking = place(a, t);
-      let x = tmp.x, y = tmp.y, z = tmp.z, sc = 1;
+      let x = tmpA[0], y = tmpA[1], z = tmpA[2], sc = 1;
       const li = curLoc;
       let r, g, b;
       if (walking) {

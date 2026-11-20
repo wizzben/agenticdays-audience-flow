@@ -85,10 +85,11 @@ export function createClouds(scene, labelsEl, camera, container) {
       label.querySelector('b').textContent = t.short;
       label.dataset.topic = i;
       labelsEl.appendChild(label);
-      clouds.push({ g, puffs, matA, matB, baseCol, lightCol, hit, label, nameEl: label.querySelector('b'), subEl: label.querySelector('small'), r: R_MIN, target: R_MIN, proj: 0, val: 0, hue, shown: true, baseY, w: 0, h: 0, topic: t });
+      clouds.push({ g, puffs, matA, matB, baseCol, lightCol, hit, label, nameEl: label.querySelector('b'), subEl: label.querySelector('small'), r: R_MIN, target: R_MIN, proj: 0, val: 0, hue, shown: true, lx: -1e9, ly: -1e9, baseY, w: 0, h: 0, topic: t });
     });
   }
 
+  let vv = 0, vp = 0;
   function valueAt(i, t) {
     const f = Math.min(model.K - 1, Math.max(0, (t - model.t0) / model.step));
     const k0 = Math.floor(f), k1 = Math.min(model.K - 1, k0 + 1), a = f - k0;
@@ -96,18 +97,22 @@ export function createClouds(scene, labelsEl, camera, container) {
     const P = mode === 'cum' ? model.topicProjCum[i] : model.topicProjNow[i];
     const val = A[k0] * (1 - a) + A[k1] * a;
     const pv = P[k0] * (1 - a) + P[k1] * a;
-    return [val, val > 1e-6 ? pv / val : 0];
+    vv = val; vp = val > 1e-6 ? pv / val : 0;
   }
 
   let frameNo = 0;
   /** t: sim time ms; dt: seconds since last frame; clock: seconds */
   function update(t, dt, clock, snap) {
     if (!model) return;
-    const max = mode === 'cum' ? model.topicMaxCum : model.topicMaxNow;
+    const gmax = mode === 'cum' ? model.topicMaxCum : model.topicMaxNow;
+    let cur = 0;
+    for (let i = 0; i < clouds.length; i++) { valueAt(i, t); if (vv > cur) cur = vv; }
+    const max = Math.max(cur, 0.3 * gmax, 1e-6);
     const k = snap ? 1 : 1 - Math.exp(-dt * 3.2);
     for (let i = 0; i < clouds.length; i++) {
       const c = clouds[i];
-      const [val, pf] = valueAt(i, t);
+      valueAt(i, t);
+      const val = vv, pf = vp;
       c.val = val;
       c.target = R_MIN + (R_MAX - R_MIN) * Math.sqrt(Math.min(1, val / max));
       c.r += (c.target - c.r) * k;
@@ -154,10 +159,11 @@ export function createClouds(scene, labelsEl, camera, container) {
       placed.push(rect);
       if (!c.shown) { c.label.classList.remove('off'); c.shown = true; }
       c.label.style.display = '';
-      c.label.style.transform = `translate(-50%,-50%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`;
-      c.label.classList.toggle('hl', hl);
-      c.label.classList.toggle('proj', c.proj > 0.5);
-      c.label.style.opacity = highlight && !hl ? 0.35 : 1;
+      if (Math.abs(x - c.lx) > 0.6 || Math.abs(y - c.ly) > 0.6) { c.lx = x; c.ly = y; c.label.style.transform = `translate(-50%,-50%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`; }
+      const pj = c.proj > 0.5, op = highlight && !hl ? 0.35 : 1;
+      if (c.hlS !== hl) { c.hlS = hl; c.label.classList.toggle('hl', hl); }
+      if (c.pjS !== pj) { c.pjS = pj; c.label.classList.toggle('proj', pj); }
+      if (c.opS !== op) { c.opS = op; c.label.style.opacity = op; }
     }
   }
 
