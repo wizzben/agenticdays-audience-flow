@@ -34,7 +34,7 @@ export function createScene(container, labelsEl) {
   sun.position.set(60, 120, 80);
   scene.add(sun);
 
-  const home = { pos: new THREE.Vector3(136, 66, 34), target: new THREE.Vector3(0, 24, 0) };
+  const home = { pos: new THREE.Vector3(114, 66, 114), target: new THREE.Vector3(0, 25, 0) };
   camera.position.copy(home.pos);
   controls.target.copy(home.target);
 
@@ -72,7 +72,7 @@ export function createScene(container, labelsEl) {
     venue.add(e);
     hubMeshes[h.id] = m;
   }
-  // walking routes (corridors, escalator, skywalk, lifts)
+  // walking routes (corridors, escalator, skywalk, stairs)
   {
     const { edges } = buildRoutes(ROOMS.map((r) => r.id));
     const pos = [];
@@ -81,6 +81,32 @@ export function createScene(container, labelsEl) {
     geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
     const l = new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color: 0x7fb4ff, transparent: true, opacity: 0.22 }));
     venue.add(l);
+    // Everything that changes floor (escalator to the skywalk, stairs down to Studio 1, north building staircase)
+    // gets visible steps and handrails, so the floors read as connected.
+    const flights = edges.filter(([a, b]) => Math.abs(G.nodes[a][1] - G.nodes[b][1]) > 0.3);
+    const WIDTH = 2.4, counts = flights.map(([a, b]) => Math.max(4, Math.round(Math.abs(G.nodes[a][1] - G.nodes[b][1]) / 0.42)));
+    const treads = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 0.14, WIDTH), new THREE.MeshBasicMaterial({ color: 0x9fc2ff, transparent: true, opacity: 0.6, depthWrite: false }), counts.reduce((x, y) => x + y, 0));
+    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc3 = new THREE.Vector3(), p3 = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
+    const rail = [];
+    let n = 0;
+    flights.forEach(([a, b], fi) => {
+      const A = G.nodes[a], B = G.nodes[b], N = counts[fi];
+      const dx = B[0] - A[0], dz = B[2] - A[2], run = Math.hypot(dx, dz) || 0.001;
+      q.setFromAxisAngle(up, Math.atan2(-dz, dx));
+      sc3.set(Math.max(0.5, (run / N) * 0.92), 1, 1);
+      for (let i = 0; i < N; i++) {
+        const f = (i + 0.5) / N;
+        p3.set(A[0] + dx * f, A[1] + (B[1] - A[1]) * f, A[2] + dz * f);
+        treads.setMatrixAt(n++, m4.compose(p3, q, sc3));
+      }
+      const ox = (-dz / run) * (WIDTH / 2), oz = (dx / run) * (WIDTH / 2);
+      for (const s of [1, -1]) rail.push(A[0] + ox * s, A[1] + 1, A[2] + oz * s, B[0] + ox * s, B[1] + 1, B[2] + oz * s);
+    });
+    treads.renderOrder = 2;
+    venue.add(treads);
+    const rg = new THREE.BufferGeometry();
+    rg.setAttribute('position', new THREE.Float32BufferAttribute(rail, 3));
+    venue.add(new THREE.LineSegments(rg, new THREE.LineBasicMaterial({ color: 0xbcd6ff, transparent: true, opacity: 0.8 })));
   }
 
   // --- rooms
@@ -161,7 +187,7 @@ export function createScene(container, labelsEl) {
     const tall = w / h < 0.8;
     camera.fov = tall ? 55 : 38;
     camera.updateProjectionMatrix();
-    if (tall) { home.pos.set(28, 128, 205); home.target.set(0, 20, -6); } else { home.pos.set(136, 66, 34); home.target.set(0, 24, 0); }
+    if (tall) { home.pos.set(52, 96, 204); home.target.set(0, 27, -6); } else { home.pos.set(114, 66, 114); home.target.set(0, 25, 0); }
     if (!userMoved) { camera.position.copy(home.pos); controls.target.copy(home.target); }
   }
   let userMoved = false;

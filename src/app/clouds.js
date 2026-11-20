@@ -60,7 +60,7 @@ export function createClouds(scene, labelsEl, camera, container) {
       // layout: spiral on an ellipse above the venue
       const rr = Math.sqrt((i + 0.6) / n);
       const th = i * 2.399963;
-      g.position.set(Math.cos(th) * rr * 64, 34 + ((i * 37) % 5) * 3.2, Math.sin(th) * rr * 76);
+      g.position.set(Math.cos(th) * rr * 64, 44 + ((i * 37) % 5) * 3.2, Math.sin(th) * rr * 76);
       const puffs = [];
       for (let p = 0; p < PUFFS; p++) {
         const a = rng() * 6.283, b = Math.acos(2 * rng() - 1), rad = 0.35 + 0.65 * Math.cbrt(rng());

@@ -21,7 +21,9 @@ function plan(p, floor) {
   // solve sx = a*U0 + b*V0 ; sy = a*U1 + b*V1
   const a = (sx * V[1] - sy * V[0]) / det;
   const b = (U[0] * sy - U[1] * sx) / det;
-  return [a, b];
+  // Negate b: seen from above, three.js world (x right, z towards the viewer) has the handedness of the screen,
+  // and (a, b) alone would be its mirror image (Century and Millennium swapped, north building on the wrong side).
+  return [a, -b];
 }
 const slabs = [...svg.matchAll(/class="vm-slab" d="([^"]+)"/g)].map((m) => pts(m[1]));
 const slabFloor = ['n4', 'n0', 'main2', 'main1'];
